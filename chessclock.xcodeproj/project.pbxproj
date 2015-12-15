@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3723525217FC7EED000BF4EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3723525117FC7EED000BF4EC /* Images.xcassets */; };
+		373946F41799879E0050483A /* UIColor+CTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 373946F31799879E0050483A /* UIColor+CTRExtensions.m */; };
+		37758AEF14F9A79F00CD7A11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AEE14F9A79F00CD7A11 /* UIKit.framework */; };
+		37758AF114F9A79F00CD7A11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AF014F9A79F00CD7A11 /* Foundation.framework */; };
+		37758AF314F9A79F00CD7A11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AF214F9A79F00CD7A11 /* CoreGraphics.framework */; };
+		37758AF914F9A79F00CD7A11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37758AF714F9A79F00CD7A11 /* InfoPlist.strings */; };
+		37758AFB14F9A79F00CD7A11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37758AFA14F9A79F00CD7A11 /* main.m */; };
+		37758AFF14F9A79F00CD7A11 /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37758AFE14F9A79F00CD7A11 /* DMAppDelegate.m */; };
+		37758B0214F9A79F00CD7A11 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37758B0014F9A79F00CD7A11 /* MainStoryboard.storyboard */; };
+		37758B0814F9A79F00CD7A11 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37758B0714F9A79F00CD7A11 /* GameViewController.m */; };
+		3790086815334FFE00B61AE8 /* DMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3790086715334FFE00B61AE8 /* DMSettingsViewController.m */; };
+		37AC72031512985B00194BD1 /* DMClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC72021512985B00194BD1 /* DMClock.m */; };
+		37AF871F16498D74006E245D /* DMGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AF871E16498D74006E245D /* DMGame.m */; };
+		37C3E1BB179F2C0B00C557BC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C3E1BA179F2C0B00C557BC /* AudioToolbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3723525117FC7EED000BF4EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		373946F21799879E0050483A /* UIColor+CTRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIColor+CTRExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		373946F31799879E0050483A /* UIColor+CTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIColor+CTRExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37758AEA14F9A79F00CD7A11 /* chessclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chessclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37758AEE14F9A79F00CD7A11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		37758AF014F9A79F00CD7A11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		37758AF214F9A79F00CD7A11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		37758AF614F9A79F00CD7A11 /* chessclock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chessclock-Info.plist"; sourceTree = "<group>"; };
+		37758AF814F9A79F00CD7A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37758AFA14F9A79F00CD7A11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37758AFC14F9A79F00CD7A11 /* chessclock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "chessclock-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37758AFD14F9A79F00CD7A11 /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		37758AFE14F9A79F00CD7A11 /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37758B0114F9A79F00CD7A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		37758B0614F9A79F00CD7A11 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GameViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		37758B0714F9A79F00CD7A11 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37758B0F14F9A79F00CD7A11 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3790086615334FFE00B61AE8 /* DMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMSettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3790086715334FFE00B61AE8 /* DMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMSettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37AC72011512985B00194BD1 /* DMClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMClock.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		37AC72021512985B00194BD1 /* DMClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMClock.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37AF871D16498D74006E245D /* DMGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMGame.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		37AF871E16498D74006E245D /* DMGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMGame.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37C3E1BA179F2C0B00C557BC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37758AE714F9A79F00CD7A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37C3E1BB179F2C0B00C557BC /* AudioToolbox.framework in Frameworks */,
+				37758AEF14F9A79F00CD7A11 /* UIKit.framework in Frameworks */,
+				37758AF114F9A79F00CD7A11 /* Foundation.framework in Frameworks */,
+				37758AF314F9A79F00CD7A11 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37758ADF14F9A79F00CD7A11 = {
+			isa = PBXGroup;
+			children = (
+				37758AF414F9A79F00CD7A11 /* chessclock */,
+				37758AED14F9A79F00CD7A11 /* Frameworks */,
+				37758AEB14F9A79F00CD7A11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37758AEB14F9A79F00CD7A11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37758AEA14F9A79F00CD7A11 /* chessclock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37758AED14F9A79F00CD7A11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37C3E1BA179F2C0B00C557BC /* AudioToolbox.framework */,
+				37758AEE14F9A79F00CD7A11 /* UIKit.framework */,
+				37758AF014F9A79F00CD7A11 /* Foundation.framework */,
+				37758AF214F9A79F00CD7A11 /* CoreGraphics.framework */,
+				37758B0F14F9A79F00CD7A11 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37758AF414F9A79F00CD7A11 /* chessclock */ = {
+			isa = PBXGroup;
+			children = (
+				37758AFD14F9A79F00CD7A11 /* DMAppDelegate.h */,
+				37758AFE14F9A79F00CD7A11 /* DMAppDelegate.m */,
+				37758B0014F9A79F00CD7A11 /* MainStoryboard.storyboard */,
+				37758B0614F9A79F00CD7A11 /* GameViewController.h */,
+				37758B0714F9A79F00CD7A11 /* GameViewController.m */,
+				373946F21799879E0050483A /* UIColor+CTRExtensions.h */,
+				373946F31799879E0050483A /* UIColor+CTRExtensions.m */,
+				3790086615334FFE00B61AE8 /* DMSettingsViewController.h */,
+				3790086715334FFE00B61AE8 /* DMSettingsViewController.m */,
+				37AF871D16498D74006E245D /* DMGame.h */,
+				37AF871E16498D74006E245D /* DMGame.m */,
+				37AC72011512985B00194BD1 /* DMClock.h */,
+				37AC72021512985B00194BD1 /* DMClock.m */,
+				3723525117FC7EED000BF4EC /* Images.xcassets */,
+				37758AF514F9A79F00CD7A11 /* Supporting Files */,
+			);
+			path = chessclock;
+			sourceTree = "<group>";
+		};
+		37758AF514F9A79F00CD7A11 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37758AF614F9A79F00CD7A11 /* chessclock-Info.plist */,
+				37758AF714F9A79F00CD7A11 /* InfoPlist.strings */,
+				37758AFA14F9A79F00CD7A11 /* main.m */,
+				37758AFC14F9A79F00CD7A11 /* chessclock-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37758AE914F9A79F00CD7A11 /* chessclock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37758B2014F9A79F00CD7A11 /* Build configuration list for PBXNativeTarget "chessclock" */;
+			buildPhases = (
+				37758AE614F9A79F00CD7A11 /* Sources */,
+				37758AE714F9A79F00CD7A11 /* Frameworks */,
+				37758AE814F9A79F00CD7A11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chessclock;
+			productName = chesstimer;
+			productReference = 37758AEA14F9A79F00CD7A11 /* chessclock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37758AE114F9A79F00CD7A11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DM;
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					37758AE914F9A79F00CD7A11 = {
+						DevelopmentTeam = 3S798A44L5;
+					};
+				};
+			};
+			buildConfigurationList = 37758AE414F9A79F00CD7A11 /* Build configuration list for PBXProject "chessclock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 37758ADF14F9A79F00CD7A11;
+			productRefGroup = 37758AEB14F9A79F00CD7A11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37758AE914F9A79F00CD7A11 /* chessclock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37758AE814F9A79F00CD7A11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37758AF914F9A79F00CD7A11 /* InfoPlist.strings in Resources */,
+				37758B0214F9A79F00CD7A11 /* MainStoryboard.storyboard in Resources */,
+				3723525217FC7EED000BF4EC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37758AE614F9A79F00CD7A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37758AFB14F9A79F00CD7A11 /* main.m in Sources */,
+				37758AFF14F9A79F00CD7A11 /* DMAppDelegate.m in Sources */,
+				37758B0814F9A79F00CD7A11 /* GameViewController.m in Sources */,
+				37AC72031512985B00194BD1 /* DMClock.m in Sources */,
+				3790086815334FFE00B61AE8 /* DMSettingsViewController.m in Sources */,
+				37AF871F16498D74006E245D /* DMGame.m in Sources */,
+				373946F41799879E0050483A /* UIColor+CTRExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		37758AF714F9A79F00CD7A11 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37758AF814F9A79F00CD7A11 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		37758B0014F9A79F00CD7A11 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37758B0114F9A79F00CD7A11 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37758B1E14F9A79F00CD7A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dan McGinnis (8HUQ4QZKCM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "D182AD81-83C9-4667-A5F8-8639B78EB7FC";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37758B1F14F9A79F00CD7A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dan McGinnis (8HUQ4QZKCM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "D182AD81-83C9-4667-A5F8-8639B78EB7FC";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37758B2114F9A79F00CD7A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "chessclock/chessclock-Prefix.pch";
+				INFOPLIST_FILE = "chessclock/chessclock-Info.plist";
+				PRODUCT_NAME = chessclock;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		37758B2214F9A79F00CD7A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "chessclock/chessclock-Prefix.pch";
+				INFOPLIST_FILE = "chessclock/chessclock-Info.plist";
+				PRODUCT_NAME = chessclock;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37758AE414F9A79F00CD7A11 /* Build configuration list for PBXProject "chessclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37758B1E14F9A79F00CD7A11 /* Debug */,
+				37758B1F14F9A79F00CD7A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37758B2014F9A79F00CD7A11 /* Build configuration list for PBXNativeTarget "chessclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37758B2114F9A79F00CD7A11 /* Debug */,
+				37758B2214F9A79F00CD7A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37758AE114F9A79F00CD7A11 /* Project object */;
+}

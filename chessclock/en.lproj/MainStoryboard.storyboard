@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lFH-Qe-cw8"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXg-gS-OsN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6x-Mm-Cs0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH2-qq-tbN" userLabel="white button">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="84"/>
+                                        <state key="normal" title="00:00">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="endWhiteTurn:" destination="2" eventType="touchUpInside" id="wWk-yM-z7h"/>
+                                            <action selector="whiteButtonPressCancelled:" destination="2" eventType="touchUpOutside" id="iri-ek-vkE"/>
+                                            <action selector="whiteButtonPressed:" destination="2" eventType="touchDown" id="3Mv-EV-6oJ"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="L6B-VO-0dI" userLabel="white slider">
+                                        <rect key="frame" x="18" y="20" width="284" height="34"/>
+                                        <connections>
+                                            <action selector="whiteSliderFinishedEditing:" destination="2" eventType="touchUpInside" id="EXg-Ks-9oV"/>
+                                            <action selector="whiteSliderValueChanged:" destination="2" eventType="valueChanged" id="mjo-cH-i23"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tap here to start the game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmn-Ri-wPl">
+                                        <rect key="frame" x="62" y="20" width="197" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Tmn-Ri-wPl" secondAttribute="centerX" id="FG1-eh-aYo"/>
+                                    <constraint firstItem="YH2-qq-tbN" firstAttribute="leading" secondItem="W6x-Mm-Cs0" secondAttribute="leading" id="HGi-QV-6R8"/>
+                                    <constraint firstItem="YH2-qq-tbN" firstAttribute="trailing" secondItem="W6x-Mm-Cs0" secondAttribute="trailing" id="Lsc-kj-Ljd"/>
+                                    <constraint firstItem="YH2-qq-tbN" firstAttribute="bottom" secondItem="W6x-Mm-Cs0" secondAttribute="bottom" id="OCe-6g-dZg"/>
+                                    <constraint firstAttribute="trailing" secondItem="L6B-VO-0dI" secondAttribute="trailing" constant="20" symbolic="YES" id="Tgw-ab-Nwr"/>
+                                    <constraint firstItem="YH2-qq-tbN" firstAttribute="top" secondItem="W6x-Mm-Cs0" secondAttribute="top" id="Y3O-EV-m7z"/>
+                                    <constraint firstItem="L6B-VO-0dI" firstAttribute="top" secondItem="W6x-Mm-Cs0" secondAttribute="top" constant="20" symbolic="YES" id="fz0-M9-5Ea"/>
+                                    <constraint firstItem="Tmn-Ri-wPl" firstAttribute="top" secondItem="W6x-Mm-Cs0" secondAttribute="top" constant="20" symbolic="YES" id="glf-Du-5NL"/>
+                                    <constraint firstItem="L6B-VO-0dI" firstAttribute="leading" secondItem="W6x-Mm-Cs0" secondAttribute="leading" constant="20" symbolic="YES" id="otd-zN-5Cb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5x-e4-Dkg">
+                                <rect key="frame" x="0.0" y="249" width="320" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="749" verticalHuggingPriority="749" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-u2-581">
+                                        <rect key="frame" x="225" y="0.0" width="95" height="72"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="pause">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="togglePaused:" destination="2" eventType="touchUpInside" id="kRD-4Q-aaP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="749" verticalHuggingPriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntM-rw-4KP">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="72"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="reset">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleReset:" destination="2" eventType="touchUpInside" id="Wfw-Sr-y89"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sl-Lb-S6L" userLabel="cancelReset">
+                                        <rect key="frame" x="0.0" y="17" width="108" height="35"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="cancel">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelReset:" destination="2" eventType="touchUpInside" id="gCY-iz-pPa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLn-8c-Jq3" userLabel="confirmReset">
+                                        <rect key="frame" x="241" y="5" width="59" height="47"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="reset">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmReset:" destination="2" eventType="touchUpInside" id="Rkh-dk-N5P"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="are you sure you want to reset?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="208" translatesAutoresizingMaskIntoConstraints="NO" id="nGo-2L-bfG">
+                                        <rect key="frame" x="56" y="20" width="208" height="69"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7h-fz-qv4">
+                                        <rect key="frame" x="128" y="0.0" width="64" height="72"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="times">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleTimes:" destination="2" eventType="touchUpInside" id="7TO-Hx-I5S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92636114358901978" green="0.92633336782455444" blue="0.92634910345077515" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zLn-8c-Jq3" secondAttribute="trailing" constant="20" symbolic="YES" id="1e6-Se-cgr"/>
+                                    <constraint firstAttribute="bottom" secondItem="ntM-rw-4KP" secondAttribute="bottom" id="3BV-WF-DKO"/>
+                                    <constraint firstItem="nGo-2L-bfG" firstAttribute="top" secondItem="L5x-e4-Dkg" secondAttribute="top" constant="20" symbolic="YES" id="8cT-B5-6Sb"/>
+                                    <constraint firstItem="4Sl-Lb-S6L" firstAttribute="leading" secondItem="L5x-e4-Dkg" secondAttribute="leading" id="BNt-Bu-Zqr"/>
+                                    <constraint firstAttribute="bottom" secondItem="z7h-fz-qv4" secondAttribute="bottom" id="CWO-Eg-6Ve"/>
+                                    <constraint firstItem="ntM-rw-4KP" firstAttribute="top" secondItem="L5x-e4-Dkg" secondAttribute="top" id="EUf-vd-zxp"/>
+                                    <constraint firstItem="hj6-u2-581" firstAttribute="top" secondItem="L5x-e4-Dkg" secondAttribute="top" id="QlO-xh-HIS"/>
+                                    <constraint firstAttribute="height" constant="72" id="Tdm-xY-PEi"/>
+                                    <constraint firstAttribute="bottom" secondItem="zLn-8c-Jq3" secondAttribute="bottom" constant="20" symbolic="YES" id="UHY-Jf-JKf"/>
+                                    <constraint firstItem="ntM-rw-4KP" firstAttribute="leading" secondItem="L5x-e4-Dkg" secondAttribute="leading" id="Uyh-ol-nV3"/>
+                                    <constraint firstAttribute="centerX" secondItem="z7h-fz-qv4" secondAttribute="centerX" id="aCI-YY-gSv"/>
+                                    <constraint firstItem="hj6-u2-581" firstAttribute="trailing" secondItem="L5x-e4-Dkg" secondAttribute="trailing" id="dsg-1x-rQJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="hj6-u2-581" secondAttribute="bottom" id="dsn-3w-xg3"/>
+                                    <constraint firstAttribute="centerX" secondItem="nGo-2L-bfG" secondAttribute="centerX" id="jfD-G6-2nk"/>
+                                    <constraint firstItem="z7h-fz-qv4" firstAttribute="top" secondItem="L5x-e4-Dkg" secondAttribute="top" id="mSw-jt-TFO"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Sl-Lb-S6L" secondAttribute="bottom" constant="20" symbolic="YES" id="ySo-Tm-adj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aC-6a-Dzy">
+                                <rect key="frame" x="0.0" y="321" width="320" height="249"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DQ-jX-cZa" userLabel="black button">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="84"/>
+                                        <state key="normal" title="00:00">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="blackButtonPressCancelled:" destination="2" eventType="touchUpOutside" id="yYh-iT-y3u"/>
+                                            <action selector="blackButtonPressed:" destination="2" eventType="touchDown" id="ZLr-Yi-sEA"/>
+                                            <action selector="endBlackTurn:" destination="2" eventType="touchUpInside" id="ET7-Fe-oss"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="Fdx-q8-ThR" userLabel="black slider">
+                                        <rect key="frame" x="18" y="196" width="284" height="34"/>
+                                        <connections>
+                                            <action selector="blackSliderFinishedEditing:" destination="2" eventType="touchUpInside" id="2ys-RC-0Bh"/>
+                                            <action selector="blackSliderValueChanged:" destination="2" eventType="valueChanged" id="paj-V8-oP3"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3DQ-jX-cZa" firstAttribute="bottom" secondItem="9aC-6a-Dzy" secondAttribute="bottom" id="5rI-B1-cfW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fdx-q8-ThR" secondAttribute="bottom" constant="20" symbolic="YES" id="8Lw-15-D25"/>
+                                    <constraint firstItem="3DQ-jX-cZa" firstAttribute="top" secondItem="9aC-6a-Dzy" secondAttribute="top" id="HcR-ti-VuW"/>
+                                    <constraint firstItem="3DQ-jX-cZa" firstAttribute="leading" secondItem="9aC-6a-Dzy" secondAttribute="leading" id="SEL-8m-zfc"/>
+                                    <constraint firstItem="3DQ-jX-cZa" firstAttribute="trailing" secondItem="9aC-6a-Dzy" secondAttribute="trailing" id="lQE-w1-xxd"/>
+                                    <constraint firstItem="Fdx-q8-ThR" firstAttribute="leading" secondItem="9aC-6a-Dzy" secondAttribute="leading" constant="20" symbolic="YES" id="n78-sU-R44"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fdx-q8-ThR" secondAttribute="trailing" constant="20" symbolic="YES" id="vcj-aV-8wB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.94512348790322576" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L5x-e4-Dkg" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="6Jr-6q-BRH"/>
+                            <constraint firstItem="9aC-6a-Dzy" firstAttribute="top" secondItem="L5x-e4-Dkg" secondAttribute="bottom" id="8dW-PL-wbB"/>
+                            <constraint firstItem="L5x-e4-Dkg" firstAttribute="top" secondItem="W6x-Mm-Cs0" secondAttribute="bottom" id="9Gu-yR-glu"/>
+                            <constraint firstItem="9aC-6a-Dzy" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="Foa-Oy-pd1"/>
+                            <constraint firstItem="9aC-6a-Dzy" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="GEg-my-uDo"/>
+                            <constraint firstItem="W6x-Mm-Cs0" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="J1J-Va-O3T"/>
+                            <constraint firstItem="W6x-Mm-Cs0" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="Mcb-8P-NGB"/>
+                            <constraint firstAttribute="centerY" secondItem="L5x-e4-Dkg" secondAttribute="centerY" id="USU-tM-t3q"/>
+                            <constraint firstItem="L5x-e4-Dkg" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="aMO-5k-6Qj"/>
+                            <constraint firstItem="9aC-6a-Dzy" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="cT3-ok-7em"/>
+                            <constraint firstItem="L5x-e4-Dkg" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="cth-IJ-6dv"/>
+                            <constraint firstItem="L5x-e4-Dkg" firstAttribute="top" secondItem="W6x-Mm-Cs0" secondAttribute="bottom" id="gyD-cB-4e6"/>
+                            <constraint firstItem="W6x-Mm-Cs0" firstAttribute="top" secondItem="3" secondAttribute="top" id="zu2-5B-FsA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blackBackground" destination="9aC-6a-Dzy" id="5uk-3h-Fr0"/>
+                        <outlet property="blackButton" destination="3DQ-jX-cZa" id="TwK-7n-L88"/>
+                        <outlet property="blackSlider" destination="Fdx-q8-ThR" id="2SZ-mp-Wzc"/>
+                        <outlet property="blackSliderBottomConstraint" destination="8Lw-15-D25" id="An9-4C-HxT"/>
+                        <outlet property="cancelResetButton" destination="4Sl-Lb-S6L" id="CUV-4n-FPn"/>
+                        <outlet property="confirmResetButton" destination="zLn-8c-Jq3" id="cJ0-i8-Lut"/>
+                        <outlet property="confirmResetLabel" destination="nGo-2L-bfG" id="gZH-fH-E97"/>
+                        <outlet property="greyBackground" destination="L5x-e4-Dkg" id="1s4-q4-1QI"/>
+                        <outlet property="greyBackgroundHeightConstraint" destination="Tdm-xY-PEi" id="mzi-JD-a7l"/>
+                        <outlet property="pauseButton" destination="hj6-u2-581" id="2DE-Zo-gQq"/>
+                        <outlet property="pauseButtonTrailingConstraint" destination="dsg-1x-rQJ" id="a3e-Xa-9Hk"/>
+                        <outlet property="resetButton" destination="ntM-rw-4KP" id="02a-r1-GSw"/>
+                        <outlet property="resetButtonLeadingConstraint" destination="Uyh-ol-nV3" id="8BW-7M-sBE"/>
+                        <outlet property="startGameLabel" destination="Tmn-Ri-wPl" id="1eE-Sn-Z3E"/>
+                        <outlet property="timesButton" destination="z7h-fz-qv4" id="r9f-1U-Ej2"/>
+                        <outlet property="whiteBackground" destination="W6x-Mm-Cs0" id="aKW-wX-ZVy"/>
+                        <outlet property="whiteButton" destination="YH2-qq-tbN" id="c7D-38-5cS"/>
+                        <outlet property="whiteSlider" destination="L6B-VO-0dI" id="Pjz-bj-iyf"/>
+                        <outlet property="whiteSliderTopConstraint" destination="fz0-M9-5Ea" id="SDj-3H-xoj"/>
+                        <segue destination="xrZ-Yg-uGk" kind="modal" identifier="SettingsSegue" modalTransitionStyle="flipHorizontal" id="iIy-lD-hPH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="215"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="aXe-ZW-coC">
+            <objects>
+                <viewController id="xrZ-Yg-uGk" customClass="DMSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kgx-Ci-plV"/>
+                        <viewControllerLayoutGuide type="bottom" id="RJr-cb-Fpr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="11c-QH-0iG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zE-RR-UBG">
+                                <rect key="frame" x="109" y="267" width="102" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="done">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="xrZ-Yg-uGk" eventType="touchUpInside" id="3eL-lB-jwG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92636114358901978" green="0.92633336782455444" blue="0.92634910345077515" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="1zE-RR-UBG" secondAttribute="centerY" id="a3b-Jl-wdW"/>
+                            <constraint firstAttribute="centerX" secondItem="1zE-RR-UBG" secondAttribute="centerX" id="fUr-hp-YR7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goButton" destination="1zE-RR-UBG" id="ORu-Kq-ZLk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qft-Gu-NK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="463" y="215"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
