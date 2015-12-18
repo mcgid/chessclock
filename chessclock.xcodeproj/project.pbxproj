@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3723525217FC7EED000BF4EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3723525117FC7EED000BF4EC /* Images.xcassets */; };
 		373946F41799879E0050483A /* UIColor+CTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 373946F31799879E0050483A /* UIColor+CTRExtensions.m */; };
+		374635081C24940000880DBF /* DMGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 374635071C24940000880DBF /* DMGameView.m */; };
 		37758AEF14F9A79F00CD7A11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AEE14F9A79F00CD7A11 /* UIKit.framework */; };
 		37758AF114F9A79F00CD7A11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AF014F9A79F00CD7A11 /* Foundation.framework */; };
 		37758AF314F9A79F00CD7A11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AF214F9A79F00CD7A11 /* CoreGraphics.framework */; };
@@ -27,6 +28,8 @@
 		3723525117FC7EED000BF4EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		373946F21799879E0050483A /* UIColor+CTRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIColor+CTRExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		373946F31799879E0050483A /* UIColor+CTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIColor+CTRExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		374635061C24940000880DBF /* DMGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGameView.h; sourceTree = "<group>"; };
+		374635071C24940000880DBF /* DMGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGameView.m; sourceTree = "<group>"; };
 		37758AEA14F9A79F00CD7A11 /* chessclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chessclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37758AEE14F9A79F00CD7A11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37758AF014F9A79F00CD7A11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,8 @@
 				373946F31799879E0050483A /* UIColor+CTRExtensions.m */,
 				3790086615334FFE00B61AE8 /* DMSettingsViewController.h */,
 				3790086715334FFE00B61AE8 /* DMSettingsViewController.m */,
+				374635061C24940000880DBF /* DMGameView.h */,
+				374635071C24940000880DBF /* DMGameView.m */,
 				37AF871D16498D74006E245D /* DMGame.h */,
 				37AF871E16498D74006E245D /* DMGame.m */,
 				37AC72011512985B00194BD1 /* DMClock.h */,
@@ -201,6 +206,7 @@
 				37758B0814F9A79F00CD7A11 /* GameViewController.m in Sources */,
 				37AC72031512985B00194BD1 /* DMClock.m in Sources */,
 				3790086815334FFE00B61AE8 /* DMSettingsViewController.m in Sources */,
+				374635081C24940000880DBF /* DMGameView.m in Sources */,
 				37AF871F16498D74006E245D /* DMGame.m in Sources */,
 				373946F41799879E0050483A /* UIColor+CTRExtensions.m in Sources */,
 			);
