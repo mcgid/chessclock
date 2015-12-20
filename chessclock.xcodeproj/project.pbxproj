@@ -19,6 +19,7 @@
 		37758B0214F9A79F00CD7A11 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37758B0014F9A79F00CD7A11 /* MainStoryboard.storyboard */; };
 		37758B0814F9A79F00CD7A11 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37758B0714F9A79F00CD7A11 /* GameViewController.m */; };
 		3790086815334FFE00B61AE8 /* DMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3790086715334FFE00B61AE8 /* DMSettingsViewController.m */; };
+		37A21AB11C27606E0019A7A2 /* DMState.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A21AB01C27606E0019A7A2 /* DMState.m */; };
 		37AC72031512985B00194BD1 /* DMClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC72021512985B00194BD1 /* DMClock.m */; };
 		37AF871F16498D74006E245D /* DMGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AF871E16498D74006E245D /* DMGame.m */; };
 		37C3E1BB179F2C0B00C557BC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C3E1BA179F2C0B00C557BC /* AudioToolbox.framework */; };
@@ -46,6 +47,8 @@
 		37758B0F14F9A79F00CD7A11 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3790086615334FFE00B61AE8 /* DMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMSettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3790086715334FFE00B61AE8 /* DMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMSettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		37A21AAF1C27606E0019A7A2 /* DMState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMState.h; path = States/DMState.h; sourceTree = "<group>"; };
+		37A21AB01C27606E0019A7A2 /* DMState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMState.m; path = States/DMState.m; sourceTree = "<group>"; };
 		37AC72011512985B00194BD1 /* DMClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMClock.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		37AC72021512985B00194BD1 /* DMClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMClock.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		37AF871D16498D74006E245D /* DMGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMGame.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -102,6 +105,7 @@
 			children = (
 				37758AFD14F9A79F00CD7A11 /* DMAppDelegate.h */,
 				37758AFE14F9A79F00CD7A11 /* DMAppDelegate.m */,
+				37A21AAE1C275EEE0019A7A2 /* States */,
 				37758B0014F9A79F00CD7A11 /* MainStoryboard.storyboard */,
 				37758B0614F9A79F00CD7A11 /* GameViewController.h */,
 				37758B0714F9A79F00CD7A11 /* GameViewController.m */,
@@ -130,6 +134,15 @@
 				37758AFC14F9A79F00CD7A11 /* chessclock-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37A21AAE1C275EEE0019A7A2 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				37A21AAF1C27606E0019A7A2 /* DMState.h */,
+				37A21AB01C27606E0019A7A2 /* DMState.m */,
+			);
+			name = States;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +217,7 @@
 				37758AFB14F9A79F00CD7A11 /* main.m in Sources */,
 				37758AFF14F9A79F00CD7A11 /* DMAppDelegate.m in Sources */,
 				37758B0814F9A79F00CD7A11 /* GameViewController.m in Sources */,
+				37A21AB11C27606E0019A7A2 /* DMState.m in Sources */,
 				37AC72031512985B00194BD1 /* DMClock.m in Sources */,
 				3790086815334FFE00B61AE8 /* DMSettingsViewController.m in Sources */,
 				374635081C24940000880DBF /* DMGameView.m in Sources */,
