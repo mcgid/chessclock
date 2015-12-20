@@ -159,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DM;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					37758AE914F9A79F00CD7A11 = {
 						DevelopmentTeam = 3S798A44L5;
@@ -250,6 +250,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -317,6 +318,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chessclock/chessclock-Prefix.pch";
 				INFOPLIST_FILE = "chessclock/chessclock-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.danmcginnis.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = chessclock;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -334,6 +336,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chessclock/chessclock-Prefix.pch";
 				INFOPLIST_FILE = "chessclock/chessclock-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.danmcginnis.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = chessclock;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
