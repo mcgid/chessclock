@@ -8,6 +8,7 @@
 
 #import "DMGameView.h"
 #import "UIColor+CTRExtensions.h"
+#import "DMClock.h"
 
 @interface DMGameView ()
 
