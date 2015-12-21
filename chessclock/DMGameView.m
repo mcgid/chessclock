@@ -139,11 +139,11 @@
         [self layoutIfNeeded];
     }];
 
-#pragma mark -
-#pragma mark View changes
-
 
 }
+
+#pragma mark -
+#pragma mark View changes
 
 
 - (void)updateInterfaceWithChanges:(void (^)(void))changes
@@ -185,11 +185,16 @@
     [button setTitle:displayTime forState:UIControlStateNormal];
 }
 
-- (void)setButtonTitlesToTimes
+- (void)updateWithWhiteTime:(DMClockTime)time
 {
-    [self setTitleOfButton:self.whiteButton toTime:[self.white remainingTime]];
-    [self setTitleOfButton:self.blackButton toTime:[self.black remainingTime]];
+    [self setTitleOfButton:self.whiteButton toTime:time];
 }
+
+- (void)updateWithBlackTime:(DMClockTime)time
+{
+    [self setTitleOfButton:self.blackButton toTime:time];
+}
+
 
 - (void)setButtonTitlesToWinLose
 {
