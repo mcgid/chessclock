@@ -13,9 +13,9 @@
 - (instancetype)initWithGameView:(DMGameView *)gameView whiteClock:(DMClock *)whiteClock blackClock:(DMClock *)blackClock
 {
     if (self = [super init]) {
-        self.gameView = gameView;
-        self.whiteClock = whiteClock;
-        self.blackClock = blackClock;
+        _gameView = gameView;
+        _whiteClock = whiteClock;
+        _blackClock = blackClock;
     }
 
     return self;
