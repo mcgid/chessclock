@@ -135,7 +135,7 @@
         self.startGameLabel.alpha = 1.0f;
         self.timesButton.alpha = 1.0f;
 
-        [self.view layoutIfNeeded];
+        [self layoutIfNeeded];
     }];
 
 #pragma mark -
@@ -161,14 +161,14 @@
                         completion:(void (^)(BOOL))completion
 {
     // Draw changes we aren't animating at all
-    [self.view layoutIfNeeded];
+    [self layoutIfNeeded];
 
     NSTimeInterval duration = 0.25;
 
     if (animatable) {
         [UIView animateWithDuration:duration animations:changes completion:completion];
     } else {
-        [UIView transitionWithView:self.view
+        [UIView transitionWithView:self
                           duration:duration
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:changes
