@@ -235,32 +235,32 @@
                             <outlet property="blackBackground" destination="9aC-6a-Dzy" id="Tqo-Ej-RxJ"/>
                             <outlet property="blackButton" destination="3DQ-jX-cZa" id="h8a-Y7-CPC"/>
                             <outlet property="blackSlider" destination="Fdx-q8-ThR" id="gSI-1N-XhA"/>
+                            <outlet property="blackSliderBottomConstraint" destination="8Lw-15-D25" id="WeM-iY-uk5"/>
                             <outlet property="cancelResetButton" destination="4Sl-Lb-S6L" id="8kT-JJ-SzQ"/>
                             <outlet property="confirmResetButton" destination="zLn-8c-Jq3" id="8f8-sQ-NPw"/>
                             <outlet property="confirmResetLabel" destination="nGo-2L-bfG" id="uMD-vE-nJN"/>
                             <outlet property="greyBackground" destination="L5x-e4-Dkg" id="unT-zf-0TL"/>
+                            <outlet property="greyBackgroundHeightConstraint" destination="Tdm-xY-PEi" id="ebH-Sh-hRW"/>
                             <outlet property="pauseButton" destination="hj6-u2-581" id="z5m-6n-h5S"/>
+                            <outlet property="pauseButtonTrailingConstraint" destination="dsg-1x-rQJ" id="NMz-X8-YsR"/>
                             <outlet property="resetButton" destination="ntM-rw-4KP" id="p86-j7-hlR"/>
+                            <outlet property="resetButtonLeadingConstraint" destination="Uyh-ol-nV3" id="i6v-JI-cHs"/>
                             <outlet property="startGameLabel" destination="Tmn-Ri-wPl" id="jsK-jg-ByM"/>
                             <outlet property="timesButton" destination="z7h-fz-qv4" id="Wzn-08-hqv"/>
                             <outlet property="whiteBackground" destination="W6x-Mm-Cs0" id="HbG-Hm-RQi"/>
                             <outlet property="whiteButton" destination="YH2-qq-tbN" id="ZjL-PX-iY5"/>
                             <outlet property="whiteSlider" destination="L6B-VO-0dI" id="7oN-gc-DeU"/>
+                            <outlet property="whiteSliderTopConstraint" destination="glf-Du-5NL" id="gMv-wn-pmt"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="blackButton" destination="3DQ-jX-cZa" id="TwK-7n-L88"/>
                         <outlet property="blackSlider" destination="Fdx-q8-ThR" id="2SZ-mp-Wzc"/>
-                        <outlet property="blackSliderBottomConstraint" destination="8Lw-15-D25" id="An9-4C-HxT"/>
                         <outlet property="cancelResetButton" destination="4Sl-Lb-S6L" id="CUV-4n-FPn"/>
                         <outlet property="confirmResetButton" destination="zLn-8c-Jq3" id="cJ0-i8-Lut"/>
                         <outlet property="confirmResetLabel" destination="nGo-2L-bfG" id="gZH-fH-E97"/>
-                        <outlet property="greyBackgroundHeightConstraint" destination="Tdm-xY-PEi" id="mzi-JD-a7l"/>
                         <outlet property="pauseButton" destination="hj6-u2-581" id="2DE-Zo-gQq"/>
-                        <outlet property="pauseButtonTrailingConstraint" destination="dsg-1x-rQJ" id="a3e-Xa-9Hk"/>
                         <outlet property="resetButton" destination="ntM-rw-4KP" id="02a-r1-GSw"/>
-                        <outlet property="resetButtonLeadingConstraint" destination="Uyh-ol-nV3" id="8BW-7M-sBE"/>
-                        <outlet property="startGameLabel" destination="Tmn-Ri-wPl" id="1eE-Sn-Z3E"/>
                         <outlet property="timesButton" destination="z7h-fz-qv4" id="r9f-1U-Ej2"/>
                         <outlet property="whiteButton" destination="YH2-qq-tbN" id="c7D-38-5cS"/>
                         <outlet property="whiteSlider" destination="L6B-VO-0dI" id="Pjz-bj-iyf"/>
