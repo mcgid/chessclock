@@ -7,10 +7,12 @@
 //
 
 #import <AudioToolbox/AudioToolbox.h>
+@import GameplayKit;
 
 #import "GameViewController.h"
 #import "DMClock.h"
 #import "DMGame.h"
+#import "DMStates.h"
 
 #import "UIColor+CTRExtensions.h"
 
@@ -20,8 +22,10 @@
 @property(nonatomic, strong) DMClock * black;
 @property(nonatomic) NSTimer *timer;
 @property(nonatomic, strong) DMGame *game;
+@property (nonatomic, weak) DMGameView *gameView;
 @property (nonatomic, strong) NSArray *sliderTimes;
 @property (nonatomic) BOOL whitePlayerHasEndedFirstTurn;
+@property (nonatomic, strong) GKStateMachine *stateMachine;
 
 
 - (void)startGame;
@@ -71,6 +75,30 @@
     self.sliderTimes = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15,
                          @20, @25, @30, @35, @40, @45, @50, @55, @60,
                          @70, @80, @90, @100, @110, @120];
+
+    self.gameView = (DMGameView *)self.view;
+
+    DMLoadingState * loadingState = [[DMLoadingState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMNewGameState * newGameState = [[DMNewGameState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMSettingsState * settingsState = [[DMSettingsState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMWhiteTurnState * whiteTurnState = [[DMWhiteTurnState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMWhitePausedState * whitePausedState = [[DMWhitePausedState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMWhiteLostState * whiteLostState = [[DMWhiteLostState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMBlackTurnState * blackTurnState = [[DMBlackTurnState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMBlackPausedState * blackPausedState = [[DMBlackPausedState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMBlackLostState * blackLostState = [[DMBlackLostState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+
+    self.stateMachine = [[GKStateMachine alloc] initWithStates:@[
+                                                                 loadingState,
+                                                                 newGameState,
+                                                                 settingsState,
+                                                                 whiteTurnState,
+                                                                 whitePausedState,
+                                                                 whiteLostState,
+                                                                 blackTurnState,
+                                                                 blackPausedState,
+                                                                 blackLostState
+                                                                 ]];
 
 }
 
