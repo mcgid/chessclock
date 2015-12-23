@@ -274,6 +274,16 @@
     self.resetButton.alpha = 0.0f;
 }
 
+- (void)enableResetButton
+{
+    self.resetButton.enabled = YES;
+}
+
+- (void)disableResetButton
+{
+    self.resetButton.enabled = NO;
+}
+
 -(void)showTimesButton
 {
     self.timesButton.alpha = 1.0f;
@@ -294,6 +304,16 @@
 {
     //    self.pauseButtonTrailingConstraint.constant = 20;
     self.pauseButton.alpha = 0.0f;
+}
+
+- (void)enablePauseButton
+{
+    self.pauseButton.enabled = YES;
+}
+
+- (void)disablePauseButton
+{
+    self.pauseButton.enabled = NO;
 }
 
 - (void)showStartGameLabel

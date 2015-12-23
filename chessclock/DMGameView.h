@@ -27,12 +27,16 @@
 
 - (void)showResetButton;
 - (void)hideResetButton;
+- (void)enableResetButton;
+- (void)disableResetButton;
 
 - (void)showTimesButton;
 - (void)hideTimesButton;
 
 - (void)showPauseButton;
 - (void)hidePauseButton;
+- (void)enablePauseButton;
+- (void)disablePauseButton;
 
 - (void)showStartGameLabel;
 - (void)hideStartGameLabel;
@@ -47,6 +51,7 @@
 
 - (void)selectPauseButton;
 - (void)deselectPauseButton;
+
 - (void)selectTimesButton;
 - (void)deselectTimesButton;
 
