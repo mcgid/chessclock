@@ -14,6 +14,8 @@
 {
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 
+    [self.gameView enableWhiteButton];
+
     if ([previousState isKindOfClass:[DMNewGameState class]]) {
         [self.gameView showPauseButton];
         [self.gameView showResetButton];
@@ -21,15 +23,12 @@
         [self.gameView enablePauseButton];
         [self.gameView disableResetButton];
 
-        [self.gameView enableWhiteButton];
     }
     else if ([previousState isKindOfClass:[DMPausedState class]]) {
-        [self.gameView enableWhiteButton];
         [self.gameView disableResetButton];
         [self.gameView deselectPauseButton];
     }
     else if ([previousState isKindOfClass:[DMBlackTurnState class]]) {
-        [self.gameView enableWhiteButton];
         [self.gameView disableBlackButton];
     }
 }
