@@ -32,10 +32,10 @@
 @end
 
 
-@interface DMWhitePausedState : DMState
+@interface DMPausedState : DMState
 @end
 
-@interface DMBlackPausedState : DMState
+@interface DMConfirmResetState : DMState
 @end
 
 

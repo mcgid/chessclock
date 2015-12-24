@@ -11,13 +11,13 @@
 		373946F41799879E0050483A /* UIColor+CTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 373946F31799879E0050483A /* UIColor+CTRExtensions.m */; };
 		374635081C24940000880DBF /* DMGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 374635071C24940000880DBF /* DMGameView.m */; };
 		374B330C1C290F4E00CF9132 /* DMBlackLostState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33021C290F4E00CF9132 /* DMBlackLostState.m */; };
-		374B330D1C290F4E00CF9132 /* DMBlackPausedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33031C290F4E00CF9132 /* DMBlackPausedState.m */; };
 		374B330E1C290F4E00CF9132 /* DMBlackTurnState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33041C290F4E00CF9132 /* DMBlackTurnState.m */; };
 		374B330F1C290F4E00CF9132 /* DMNewGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33051C290F4E00CF9132 /* DMNewGameState.m */; };
 		374B33101C290F4E00CF9132 /* DMSettingsState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33061C290F4E00CF9132 /* DMSettingsState.m */; };
 		374B33121C290F4E00CF9132 /* DMWhiteLostState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33081C290F4E00CF9132 /* DMWhiteLostState.m */; };
-		374B33131C290F4E00CF9132 /* DMWhitePausedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33091C290F4E00CF9132 /* DMWhitePausedState.m */; };
+		374B33131C290F4E00CF9132 /* DMPausedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33091C290F4E00CF9132 /* DMPausedState.m */; };
 		374B33141C290F4E00CF9132 /* DMWhiteTurnState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B330A1C290F4E00CF9132 /* DMWhiteTurnState.m */; };
+		377077241C2C7EBE0061768A /* DMConfirmResetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 377077231C2C7EBE0061768A /* DMConfirmResetState.m */; };
 		37758AEF14F9A79F00CD7A11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AEE14F9A79F00CD7A11 /* UIKit.framework */; };
 		37758AF114F9A79F00CD7A11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AF014F9A79F00CD7A11 /* Foundation.framework */; };
 		37758AF314F9A79F00CD7A11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AF214F9A79F00CD7A11 /* CoreGraphics.framework */; };
@@ -42,13 +42,13 @@
 		374635061C24940000880DBF /* DMGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGameView.h; sourceTree = "<group>"; };
 		374635071C24940000880DBF /* DMGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGameView.m; sourceTree = "<group>"; };
 		374B33021C290F4E00CF9132 /* DMBlackLostState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMBlackLostState.m; path = States/DMBlackLostState.m; sourceTree = "<group>"; };
-		374B33031C290F4E00CF9132 /* DMBlackPausedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMBlackPausedState.m; path = States/DMBlackPausedState.m; sourceTree = "<group>"; };
 		374B33041C290F4E00CF9132 /* DMBlackTurnState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMBlackTurnState.m; path = States/DMBlackTurnState.m; sourceTree = "<group>"; };
 		374B33051C290F4E00CF9132 /* DMNewGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMNewGameState.m; path = States/DMNewGameState.m; sourceTree = "<group>"; };
 		374B33061C290F4E00CF9132 /* DMSettingsState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMSettingsState.m; path = States/DMSettingsState.m; sourceTree = "<group>"; };
 		374B33081C290F4E00CF9132 /* DMWhiteLostState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMWhiteLostState.m; path = States/DMWhiteLostState.m; sourceTree = "<group>"; };
-		374B33091C290F4E00CF9132 /* DMWhitePausedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMWhitePausedState.m; path = States/DMWhitePausedState.m; sourceTree = "<group>"; };
+		374B33091C290F4E00CF9132 /* DMPausedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPausedState.m; path = States/DMPausedState.m; sourceTree = "<group>"; };
 		374B330A1C290F4E00CF9132 /* DMWhiteTurnState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMWhiteTurnState.m; path = States/DMWhiteTurnState.m; sourceTree = "<group>"; };
+		377077231C2C7EBE0061768A /* DMConfirmResetState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMConfirmResetState.m; path = States/DMConfirmResetState.m; sourceTree = "<group>"; };
 		37758AEA14F9A79F00CD7A11 /* chessclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chessclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37758AEE14F9A79F00CD7A11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37758AF014F9A79F00CD7A11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,10 +166,10 @@
 				374B33051C290F4E00CF9132 /* DMNewGameState.m */,
 				374B33061C290F4E00CF9132 /* DMSettingsState.m */,
 				374B330A1C290F4E00CF9132 /* DMWhiteTurnState.m */,
-				374B33091C290F4E00CF9132 /* DMWhitePausedState.m */,
+				374B33091C290F4E00CF9132 /* DMPausedState.m */,
+				377077231C2C7EBE0061768A /* DMConfirmResetState.m */,
 				374B33081C290F4E00CF9132 /* DMWhiteLostState.m */,
 				374B33041C290F4E00CF9132 /* DMBlackTurnState.m */,
-				374B33031C290F4E00CF9132 /* DMBlackPausedState.m */,
 				374B33021C290F4E00CF9132 /* DMBlackLostState.m */,
 			);
 			name = States;
@@ -244,13 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				374B33131C290F4E00CF9132 /* DMWhitePausedState.m in Sources */,
+				374B33131C290F4E00CF9132 /* DMPausedState.m in Sources */,
 				374B33141C290F4E00CF9132 /* DMWhiteTurnState.m in Sources */,
 				37758AFB14F9A79F00CD7A11 /* main.m in Sources */,
 				374B330F1C290F4E00CF9132 /* DMNewGameState.m in Sources */,
 				37758AFF14F9A79F00CD7A11 /* DMAppDelegate.m in Sources */,
 				37758B0814F9A79F00CD7A11 /* GameViewController.m in Sources */,
-				374B330D1C290F4E00CF9132 /* DMBlackPausedState.m in Sources */,
 				37A21AB11C27606E0019A7A2 /* DMState.m in Sources */,
 				37AC72031512985B00194BD1 /* DMClock.m in Sources */,
 				3790086815334FFE00B61AE8 /* DMSettingsViewController.m in Sources */,
@@ -261,6 +260,7 @@
 				374B330C1C290F4E00CF9132 /* DMBlackLostState.m in Sources */,
 				37AF871F16498D74006E245D /* DMGame.m in Sources */,
 				373946F41799879E0050483A /* UIColor+CTRExtensions.m in Sources */,
+				377077241C2C7EBE0061768A /* DMConfirmResetState.m in Sources */,
 				374B33121C290F4E00CF9132 /* DMWhiteLostState.m in Sources */,
 				374B33101C290F4E00CF9132 /* DMSettingsState.m in Sources */,
 			);
