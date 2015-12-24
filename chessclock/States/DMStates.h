@@ -18,13 +18,6 @@
 @end
 
 
-@interface DMWhiteFirstTurnState : DMState
-@end
-
-@interface DMBlackFirstTurnState : DMState
-@end
-
-
 @interface DMWhiteTurnState : DMState
 @end
 
