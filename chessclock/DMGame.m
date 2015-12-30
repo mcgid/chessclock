@@ -11,6 +11,7 @@
 #import "DMGame.h"
 
 #import "DMStates.h"
+#import "DMClock.h"
 
 @interface DMGame ()
 
@@ -21,12 +22,16 @@
 
 @implementation DMGame
 
+#pragma mark Initialization
+
 - (instancetype)init
 {
     self = [super init];
 
     if (self) {
         _stateMachine = [[GKStateMachine alloc] initWithStates:[self initialStates]];
+        _white = [[DMClock alloc] init];
+        _black = [[DMClock alloc] init];
     }
 
     return self;
@@ -53,6 +58,8 @@
 
 }
 
+#pragma mark Accessors and Mutators
+
 - (Class)state
 {
     return [self.stateMachine.currentState class];
@@ -62,6 +69,5 @@
 {
     [self.stateMachine enterState:state];
 }
-
 
 @end
