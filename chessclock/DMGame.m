@@ -53,14 +53,14 @@
 
 }
 
-- (DMState *)state
+- (Class)state
 {
-
+    return [self.stateMachine.currentState class];
 }
 
-- (void)setState:(DMState *)state
+- (void)setState:(Class)state
 {
-
+    [self.stateMachine enterState:state];
 }
 
 

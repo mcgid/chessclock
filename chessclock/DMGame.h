@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) DMClock *white;
 @property (nonatomic, readonly) DMClock *black;
 
-@property (nonatomic) DMState *state;
+@property (nonatomic) Class state;
 
 @property (nonatomic, weak) DMGameView *view;
 
