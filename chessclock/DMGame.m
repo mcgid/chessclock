@@ -10,6 +10,8 @@
 
 #import "DMGame.h"
 
+#import "DMStates.h"
+
 @interface DMGame ()
 
 @property (nonatomic) GKStateMachine *stateMachine;
@@ -24,30 +26,30 @@
     self = [super init];
 
     if (self) {
+        _stateMachine = [[GKStateMachine alloc] initWithStates:[self initialStates]];
     }
 
     return self;
 }
 
-- (void)initStateMachine
+- (NSArray *)initialStates
 {
-    DMLoadingState * loadingState = [[DMLoadingState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
-    DMNewGameState * newGameState = [[DMNewGameState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
-    DMSettingsState * settingsState = [[DMSettingsState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
-    DMWhiteTurnState * whiteTurnState = [[DMWhiteTurnState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
-    DMWhiteLostState * whiteLostState = [[DMWhiteLostState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
-    DMBlackTurnState * blackTurnState = [[DMBlackTurnState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
-    DMBlackLostState * blackLostState = [[DMBlackLostState alloc] initWithGameView:self.gameView whiteClock:self.white blackClock:self.black];
+    DMLoadingState * loadingState = [[DMLoadingState alloc] initWithGame:self];
+    DMNewGameState * newGameState = [[DMNewGameState alloc] initWithGame:self];
+    DMSettingsState * settingsState = [[DMSettingsState alloc] initWithGame:self];
+    DMWhiteTurnState * whiteTurnState = [[DMWhiteTurnState alloc] initWithGame:self];
+    DMWhiteLostState * whiteLostState = [[DMWhiteLostState alloc] initWithGame:self];
+    DMBlackTurnState * blackTurnState = [[DMBlackTurnState alloc] initWithGame:self];
+    DMBlackLostState * blackLostState = [[DMBlackLostState alloc] initWithGame:self];
 
-    self.stateMachine = [[GKStateMachine alloc] initWithStates:@[
-                                                                 loadingState,
-                                                                 newGameState,
-                                                                 settingsState,
-                                                                 whiteTurnState,
-                                                                 whiteLostState,
-                                                                 blackTurnState,
-                                                                 blackLostState
-                                                                 ]];
+    return @[loadingState,
+             newGameState,
+             settingsState,
+             whiteTurnState,
+             whiteLostState,
+             blackTurnState,
+             blackLostState
+             ];
 
 }
 
