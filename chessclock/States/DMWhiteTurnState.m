@@ -15,7 +15,11 @@
 
 - (void)didEnterWithPreviousState:(GKState *)previousState
 {
+    // Prevent screen from dimming
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+
+    // Start the white clock
+    [self.game.white start];
 
     [self.game.view enableWhiteButton];
 
@@ -33,6 +37,14 @@
     }
     else if ([previousState isKindOfClass:[DMBlackTurnState class]]) {
         [self.game.view disableBlackButton];
+    }
+}
+
+- (void)willExitWithNextState:(GKState *)nextState
+{
+    if (![nextState isKindOfClass:[DMBlackTurnState class]]) {
+        // Allow the screen to dim
+        [UIApplication sharedApplication].idleTimerDisabled = NO;
     }
 }
 

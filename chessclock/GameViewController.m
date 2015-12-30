@@ -145,8 +145,6 @@
 
 - (void)startGame
 {
-    // Prevent screen from dimming
-    [UIApplication sharedApplication].idleTimerDisabled = YES;
 
     [self updateInterfaceWithChanges:^{
         self.pauseButton.enabled = YES;
@@ -160,7 +158,6 @@
     }];
 
     self.game.state = DMWhiteTurn;
-    [self.white start];
     [self startTimer];
 }
 
