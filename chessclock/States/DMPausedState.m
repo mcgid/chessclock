@@ -8,6 +8,9 @@
 
 #import "DMStates.h"
 
+#import "DMGame.h"
+#import "DMGameView.h"
+
 @implementation DMPausedState
 
 - (void)didEnterWithPreviousState:(GKState *)previousState

@@ -6,8 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DMStates.h"
-#import "DMGameView.h"
+@class DMClock, DMState, DMGameView;
 
 @interface DMGame : NSObject
 

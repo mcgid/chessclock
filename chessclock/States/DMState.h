@@ -9,7 +9,7 @@
 @import UIKit;
 @import GameplayKit;
 
-#import "DMGame.h"
+@class DMGame;
 
 @interface DMState : GKState
 
