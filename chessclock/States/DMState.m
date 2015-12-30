@@ -10,12 +10,10 @@
 
 @implementation DMState
 
-- (instancetype)initWithGameView:(DMGameView *)gameView whiteClock:(DMClock *)whiteClock blackClock:(DMClock *)blackClock
+- (instancetype)initWithGame:(DMGame *)game
 {
     if (self = [super init]) {
-        _gameView = gameView;
-        _whiteClock = whiteClock;
-        _blackClock = blackClock;
+        _game = game;
     }
 
     return self;
@@ -23,7 +21,7 @@
 
 - (instancetype) init
 {
-    return [self initWithGameView:nil whiteClock:nil blackClock:nil];
+    return [self initWithGame:nil];
 }
 
 @end

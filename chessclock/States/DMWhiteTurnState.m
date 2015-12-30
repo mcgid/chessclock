@@ -14,22 +14,22 @@
 {
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 
-    [self.gameView enableWhiteButton];
+    [self.game.view enableWhiteButton];
 
     if ([previousState isKindOfClass:[DMNewGameState class]]) {
-        [self.gameView showPauseButton];
-        [self.gameView showResetButton];
-        [self.gameView hideTimesButton];
-        [self.gameView enablePauseButton];
-        [self.gameView disableResetButton];
+        [self.game.view showPauseButton];
+        [self.game.view showResetButton];
+        [self.game.view hideTimesButton];
+        [self.game.view enablePauseButton];
+        [self.game.view disableResetButton];
 
     }
     else if ([previousState isKindOfClass:[DMPausedState class]]) {
-        [self.gameView disableResetButton];
-        [self.gameView deselectPauseButton];
+        [self.game.view disableResetButton];
+        [self.game.view deselectPauseButton];
     }
     else if ([previousState isKindOfClass:[DMBlackTurnState class]]) {
-        [self.gameView disableBlackButton];
+        [self.game.view disableBlackButton];
     }
 }
 

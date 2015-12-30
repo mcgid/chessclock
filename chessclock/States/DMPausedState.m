@@ -41,17 +41,17 @@
 //        }];
 //    }
 
-    [self.gameView selectPauseButton];
-    [self.gameView enableResetButton];
+    [self.game.view selectPauseButton];
+    [self.game.view enableResetButton];
 
     if ([previousState isKindOfClass:[DMWhiteTurnState class]]) {
-        [self.gameView disableWhiteButton];
+        [self.game.view disableWhiteButton];
     }
     else if ([previousState isKindOfClass:[DMBlackTurnState class]]) {
-        [self.gameView disableBlackButton];
+        [self.game.view disableBlackButton];
     }
     else if ([previousState isKindOfClass:[DMConfirmResetState class]]) {
-        [self.gameView hideConfirmResetArea];
+        [self.game.view hideConfirmResetArea];
     }
     else if ([previousState isKindOfClass:[DMLoadingState class]]) {
     }

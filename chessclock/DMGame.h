@@ -7,6 +7,7 @@
 //
 
 #import "DMStates.h"
+#import "DMGameView.h"
 
 @interface DMGame : NSObject
 
@@ -14,5 +15,7 @@
 @property (nonatomic, readonly) DMClock *black;
 
 @property (nonatomic) DMState *state;
+
+@property (nonatomic, weak) DMGameView *view;
 
 @end

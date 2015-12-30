@@ -9,16 +9,13 @@
 @import UIKit;
 @import GameplayKit;
 
-#import "DMGameView.h"
-#import "DMClock.h"
+#import "DMGame.h"
 
 @interface DMState : GKState
 
-@property (weak) DMGameView *gameView;
-@property (weak) DMClock *whiteClock;
-@property (weak) DMClock *blackClock;
+@property (nonatomic, weak) DMGame *game;
 
 // Designated initializer
-- (instancetype)initWithGameView:(DMGameView *)gameView whiteClock:(DMClock *)whiteClock blackClock:(DMClock *)blackClock;
+- (instancetype)initWithGame:(DMGame *)game;
 
 @end
