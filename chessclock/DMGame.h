@@ -6,23 +6,13 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-typedef NS_ENUM(NSInteger, DMGameState) {
-    DMNotStarted,
-    DMWhiteTurn,
-    DMBlackTurn,
-    DMWhitePaused,
-    DMBlackPaused,
-    DMWhiteWon,
-    DMBlackWon,
-    DMWhiteLostOnTime,
-    DMBlackLostOnTime,
-    DMChangeTimes
-};
+#import "DMStates.h"
 
 @interface DMGame : NSObject
 
-@property DMGameState state;
+@property (nonatomic, readonly) DMClock *white;
+@property (nonatomic, readonly) DMClock *black;
+
+@property (nonatomic) DMState *state;
 
 @end
