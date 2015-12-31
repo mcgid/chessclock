@@ -15,48 +15,35 @@
 
 - (void)didEnterWithPreviousState:(GKState *)previousState
 {
-
-//    if (self.game.state == DMWhiteTurn) {
-//        self.game.state = DMWhitePaused;
-//        [self.white pause];
-//
-
-//
-//        [self updateInterfaceWithChanges:^{
-//            [self disableWhiteButton];
-//
-//            if (self.whitePlayerHasEndedFirstTurn == NO) {
-//                [self hideStartGameLabel];
-//            }
-//
-//            [self.view layoutIfNeeded];
-//        }];
-//    }
-//    else if (self.game.state == DMBlackTurn) {
-//        self.game.state = DMBlackPaused;
-//        [self.black pause];
-//
-//
-//        [self updateInterfaceWithChanges:^{
-//            [self disableBlackButton];
-//
-//            [self.view layoutIfNeeded];
-//        }];
-//    }
-
-    [self.game.view selectPauseButton];
-    [self.game.view enableResetButton];
-
-    if ([previousState isKindOfClass:[DMWhiteTurnState class]]) {
+    if ([previousState isKindOfClass:[DMLoadingState class]]) {
+        // Show the player times, disabled
         [self.game.view disableWhiteButton];
-    }
-    else if ([previousState isKindOfClass:[DMBlackTurnState class]]) {
         [self.game.view disableBlackButton];
+
+        // Show the reset and resume buttons
+        [self.game.view showPauseButton];
+        [self.game.view showResetButton];
+    } else if ([previousState isKindOfClass:[DMConfirmResetState class]]) {
+        [self.game.view showPauseButton];
+        [self.game.view showResetButton];
     }
-    else if ([previousState isKindOfClass:[DMConfirmResetState class]]) {
-        [self.game.view hideConfirmResetArea];
-    }
-    else if ([previousState isKindOfClass:[DMLoadingState class]]) {
+
+    // Change the label of the pause button to 'resume'
+    [self.game.view selectPauseButton];
+
+    [self.game.view enableResetButton];
+}
+
+- (void)willExitWithNextState:(GKState *)nextState
+{
+    if ([nextState isKindOfClass:[DMConfirmResetState class]]) {
+        [self.game.view hidePauseButton];
+        [self.game.view hideResetButton];
+    } else if ([nextState isKindOfClass:[DMTurnState class]]) {
+        // Change the label of the pause button back to 'pause'
+        [self.game.view deselectPauseButton];
+
+        [self.game.view disableResetButton];
     }
 }
 
