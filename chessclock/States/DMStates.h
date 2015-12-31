@@ -17,23 +17,26 @@
 @interface DMSettingsState : DMState
 @end
 
-
-@interface DMWhiteTurnState : DMState
-@end
-
-@interface DMBlackTurnState : DMState
-@end
-
-
 @interface DMPausedState : DMState
 @end
 
 @interface DMConfirmResetState : DMState
 @end
 
-
-@interface DMBlackLostState : DMState
+@interface DMTurnState : DMState
 @end
 
-@interface DMWhiteLostState : DMState
+@interface DMWhiteTurnState : DMTurnState
+@end
+
+@interface DMBlackTurnState : DMTurnState
+@end
+
+@interface DMLostState : DMState
+@end
+
+@interface DMBlackLostState : DMLostState
+@end
+
+@interface DMWhiteLostState : DMLostState
 @end

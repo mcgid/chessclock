@@ -17,6 +17,8 @@
 		374B33121C290F4E00CF9132 /* DMWhiteLostState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33081C290F4E00CF9132 /* DMWhiteLostState.m */; };
 		374B33131C290F4E00CF9132 /* DMPausedState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B33091C290F4E00CF9132 /* DMPausedState.m */; };
 		374B33141C290F4E00CF9132 /* DMWhiteTurnState.m in Sources */ = {isa = PBXBuildFile; fileRef = 374B330A1C290F4E00CF9132 /* DMWhiteTurnState.m */; };
+		377004681C35698300BF3F66 /* DMTurnState.m in Sources */ = {isa = PBXBuildFile; fileRef = 377004671C35698300BF3F66 /* DMTurnState.m */; };
+		3770046B1C3569AD00BF3F66 /* DMLostState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3770046A1C3569AD00BF3F66 /* DMLostState.m */; };
 		377077241C2C7EBE0061768A /* DMConfirmResetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 377077231C2C7EBE0061768A /* DMConfirmResetState.m */; };
 		37758AEF14F9A79F00CD7A11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AEE14F9A79F00CD7A11 /* UIKit.framework */; };
 		37758AF114F9A79F00CD7A11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37758AF014F9A79F00CD7A11 /* Foundation.framework */; };
@@ -48,6 +50,8 @@
 		374B33081C290F4E00CF9132 /* DMWhiteLostState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMWhiteLostState.m; path = States/DMWhiteLostState.m; sourceTree = "<group>"; };
 		374B33091C290F4E00CF9132 /* DMPausedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPausedState.m; path = States/DMPausedState.m; sourceTree = "<group>"; };
 		374B330A1C290F4E00CF9132 /* DMWhiteTurnState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMWhiteTurnState.m; path = States/DMWhiteTurnState.m; sourceTree = "<group>"; };
+		377004671C35698300BF3F66 /* DMTurnState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMTurnState.m; path = States/DMTurnState.m; sourceTree = "<group>"; };
+		3770046A1C3569AD00BF3F66 /* DMLostState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLostState.m; path = States/DMLostState.m; sourceTree = "<group>"; };
 		377077231C2C7EBE0061768A /* DMConfirmResetState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMConfirmResetState.m; path = States/DMConfirmResetState.m; sourceTree = "<group>"; };
 		37758AEA14F9A79F00CD7A11 /* chessclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chessclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37758AEE14F9A79F00CD7A11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -165,11 +169,13 @@
 				37FFF8A71C27B855009CF3D6 /* DMLoadingState.m */,
 				374B33051C290F4E00CF9132 /* DMNewGameState.m */,
 				374B33061C290F4E00CF9132 /* DMSettingsState.m */,
-				374B330A1C290F4E00CF9132 /* DMWhiteTurnState.m */,
 				374B33091C290F4E00CF9132 /* DMPausedState.m */,
 				377077231C2C7EBE0061768A /* DMConfirmResetState.m */,
-				374B33081C290F4E00CF9132 /* DMWhiteLostState.m */,
+				377004671C35698300BF3F66 /* DMTurnState.m */,
+				374B330A1C290F4E00CF9132 /* DMWhiteTurnState.m */,
 				374B33041C290F4E00CF9132 /* DMBlackTurnState.m */,
+				3770046A1C3569AD00BF3F66 /* DMLostState.m */,
+				374B33081C290F4E00CF9132 /* DMWhiteLostState.m */,
 				374B33021C290F4E00CF9132 /* DMBlackLostState.m */,
 			);
 			name = States;
@@ -245,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				374B33131C290F4E00CF9132 /* DMPausedState.m in Sources */,
+				3770046B1C3569AD00BF3F66 /* DMLostState.m in Sources */,
 				374B33141C290F4E00CF9132 /* DMWhiteTurnState.m in Sources */,
 				37758AFB14F9A79F00CD7A11 /* main.m in Sources */,
 				374B330F1C290F4E00CF9132 /* DMNewGameState.m in Sources */,
@@ -263,6 +270,7 @@
 				377077241C2C7EBE0061768A /* DMConfirmResetState.m in Sources */,
 				374B33121C290F4E00CF9132 /* DMWhiteLostState.m in Sources */,
 				374B33101C290F4E00CF9132 /* DMSettingsState.m in Sources */,
+				377004681C35698300BF3F66 /* DMTurnState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
