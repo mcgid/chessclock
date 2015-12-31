@@ -46,6 +46,9 @@
         // Allow the screen to dim
         [UIApplication sharedApplication].idleTimerDisabled = NO;
     }
+
+    // Stop the white clock
+    [self.game.white stop];
 }
 
 @end
