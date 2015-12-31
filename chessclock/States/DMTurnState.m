@@ -21,7 +21,7 @@
     if ([previousState isKindOfClass:[DMNewGameState class]]) {
         [self.game.view showPauseButton];
         [self.game.view showResetButton];
-        [self.game.view hideTimesButton];
+
         [self.game.view enablePauseButton];
         [self.game.view disableResetButton];
 
