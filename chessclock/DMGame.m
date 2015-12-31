@@ -7,6 +7,7 @@
 //
 
 @import GameplayKit;
+@import QuartzCore;
 
 #import "DMGame.h"
 
@@ -16,6 +17,8 @@
 @interface DMGame ()
 
 @property (nonatomic) GKStateMachine *stateMachine;
+@property (nonatomic) CADisplayLink *displayLink;
+@property (nonatomic) CFTimeInterval lastUpdateTimestamp;
 
 @end
 
@@ -32,6 +35,8 @@
         _stateMachine = [[GKStateMachine alloc] initWithStates:[self initialStates]];
         _white = [[DMClock alloc] init];
         _black = [[DMClock alloc] init];
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+        _lastUpdateTimestamp = 0.0;
     }
 
     return self;
@@ -68,6 +73,27 @@
 - (void)setState:(Class)state
 {
     [self.stateMachine enterState:state];
+}
+
+#pragma mark Instance Methods
+
+- (void)startUpdating
+{
+    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+- (void)stopUpdating
+{
+    [self.displayLink invalidate];
+}
+
+- (void)update:(CADisplayLink *)sender
+{
+    NSTimeInterval deltaTime = (NSTimeInterval)(self.displayLink.timestamp - self.lastUpdateTimestamp);
+
+    [self.stateMachine updateWithDeltaTime:deltaTime];
+
+    self.lastUpdateTimestamp = self.displayLink.timestamp;
 }
 
 @end

@@ -17,4 +17,7 @@
 
 @property (nonatomic, weak) DMGameView *view;
 
+- (void)startUpdating;
+- (void)stopUpdating;
+
 @end
