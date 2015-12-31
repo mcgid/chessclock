@@ -11,7 +11,24 @@
 #import "DMGame.h"
 #import "DMGameView.h"
 
+@interface DMWhiteTurnState ()
+
+@property (nonatomic) BOOL isFirstTurn;
+
+@end
+
 @implementation DMWhiteTurnState
+
+- (instancetype)initWithGame:(DMGame *)game
+{
+    self = [super initWithGame:game];
+
+    if (self) {
+        _isFirstTurn = YES;
+    }
+
+    return self;
+}
 
 - (void)didEnterWithPreviousState:(GKState *)previousState
 {
@@ -35,6 +52,12 @@
     [self.game.white stop];
 
     [self.game.view disableWhiteButton];
+
+    if (self.isFirstTurn) {
+        [self.game.view hideStartGameLabel];
+
+        self.isFirstTurn = NO;
+    }
 }
 
 - (void)updateWithDeltaTime:(NSTimeInterval)seconds

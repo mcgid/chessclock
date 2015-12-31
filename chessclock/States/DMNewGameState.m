@@ -22,12 +22,16 @@
         [self.game.view enableWhiteButton];
         [self.game.view disableBlackButton];
     }
+
+    [self.game.view showStartGameLabel];
 }
 
 - (void)willExitWithNextState:(GKState *)nextState
 {
     if ([nextState isKindOfClass:[DMTurnState class]]) {
         [self.game.view hideTimesButton];
+    } else if ([nextState isKindOfClass:[DMSettingsState class]]) {
+        [self.game.view hideStartGameLabel];
     }
 }
 
