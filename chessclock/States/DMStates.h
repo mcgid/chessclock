@@ -8,6 +8,9 @@
 
 #import "DMState.h"
 
+#import "DMClock.h"
+
+
 @interface DMLoadingState : DMState
 @end
 
@@ -24,6 +27,9 @@
 @end
 
 @interface DMTurnState : DMState
+
+@property (nonatomic) DMClockTime displayedTime;
+
 @end
 
 @interface DMWhiteTurnState : DMTurnState
