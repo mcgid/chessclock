@@ -11,7 +11,24 @@
 #import "DMGame.h"
 #import "DMGameView.h"
 
+@interface DMWhiteTurnState ()
+
+@property (nonatomic) DMClockTime displayedTime;
+
+@end
+
 @implementation DMWhiteTurnState
+
+- (instancetype)initWithGame:(DMGame *)game
+{
+    self = [super initWithGame:game];
+
+    if (self) {
+        _displayedTime = [game.white remainingTime];
+    }
+
+    return self;
+}
 
 - (void)didEnterWithPreviousState:(GKState *)previousState
 {
@@ -38,10 +55,14 @@
     else if ([previousState isKindOfClass:[DMBlackTurnState class]]) {
         [self.game.view disableBlackButton];
     }
+
+    [self.game startUpdating];
 }
 
 - (void)willExitWithNextState:(GKState *)nextState
 {
+    [self.game stopUpdating];
+
     if (![nextState isKindOfClass:[DMBlackTurnState class]]) {
         // Allow the screen to dim
         [UIApplication sharedApplication].idleTimerDisabled = NO;
@@ -49,6 +70,19 @@
 
     // Stop the white clock
     [self.game.white stop];
+}
+
+- (void)updateWithDeltaTime:(NSTimeInterval)seconds
+{
+    DMClockTime whiteTime = [self.game.white remainingTime];
+
+    if (whiteTime.totalSeconds <= 0) {
+        self.game.state = [DMWhiteLostState class];
+    } else if (whiteTime.minutes != self.displayedTime.minutes ||
+               whiteTime.seconds != self.displayedTime.seconds) {
+        [self.game.view updateWithWhiteTime:whiteTime];
+        self.displayedTime = whiteTime;
+    }
 }
 
 @end
