@@ -19,17 +19,6 @@
 
 @implementation DMWhiteTurnState
 
-- (instancetype)initWithGame:(DMGame *)game
-{
-    self = [super initWithGame:game];
-
-    if (self) {
-        _displayedTime = [game.white remainingTime];
-    }
-
-    return self;
-}
-
 - (void)didEnterWithPreviousState:(GKState *)previousState
 {
     // Prevent screen from dimming
