@@ -33,6 +33,8 @@
 
     // Stop the white clock
     [self.game.white stop];
+
+    [self.game.view disableWhiteButton];
 }
 
 - (void)updateWithDeltaTime:(NSTimeInterval)seconds
