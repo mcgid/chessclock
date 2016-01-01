@@ -13,6 +13,9 @@
 - (void)updateWithWhiteTime:(DMClockTime)time;
 - (void)updateWithBlackTime:(DMClockTime)time;
 
+- (void)makeWhiteButtonWinner;
+- (void)makeBlackButtonWinner;
+
 - (void)enableWhiteButton;
 - (void)disableWhiteButton;
 

@@ -195,6 +195,27 @@
     [self setTitleOfButton:self.blackButton toTime:time];
 }
 
+- (void)makeWhiteButtonWinner
+{
+    [self.whiteButton setTitle:@"win" forState:UIControlStateNormal];
+    [self.blackButton setTitle:@"lose" forState:UIControlStateNormal];
+
+    [self.whiteButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.whiteButton setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+    [self.blackButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.blackButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+}
+
+- (void)makeBlackButtonWinner
+{
+    [self.blackButton setTitle:@"win" forState:UIControlStateNormal];
+    [self.whiteButton setTitle:@"lose" forState:UIControlStateNormal];
+
+    [self.blackButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.blackButton setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+    [self.whiteButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.whiteButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+}
 
 - (void)setButtonTitlesToWinLose
 {
