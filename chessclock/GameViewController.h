@@ -7,14 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DMSettingsViewController.h"
 
 #import "DMGameView.h"
 
 @interface GameViewController : UIViewController <DMGameViewDelegate>
-
-- (IBAction)togglePaused:(id)sender;
-- (void)pauseGame;
-- (void)resumeGame;
 
 @end

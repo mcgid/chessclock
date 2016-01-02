@@ -23,24 +23,6 @@
 @property(nonatomic) NSTimer *timer;
 @property(nonatomic, strong) DMGame *game;
 @property (nonatomic, weak) DMGameView *gameView;
-@property (nonatomic) BOOL whitePlayerHasEndedFirstTurn;
-
-
-- (void)startGame;
-- (IBAction)whiteSliderValueChanged:(id)sender;
-- (IBAction)blackSliderValueChanged:(id)sender;
-- (IBAction)whiteSliderFinishedEditing:(id)sender;
-- (IBAction)blackSliderFinishedEditing:(id)sender;
-
-- (void) updateInterface;
-
-- (void)updateInterfaceWithChanges:(void (^)(void))changes
-                       animatable:(BOOL)animatable
-                       completion:(void (^)(BOOL))completion;
-
-- (void)updateInterfaceWithChanges:(void (^)(void))changes
-                        animatable:(BOOL)animatable;
-- (IBAction)toggleTimes:(id)sender;
 
 @end
 
