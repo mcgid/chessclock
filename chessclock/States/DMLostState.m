@@ -21,6 +21,8 @@
         [self.game.view showResetButton];
     } else if ([previousState isKindOfClass:[DMTurnState class]]) {
         [self.game.view hidePauseButton];
+    } else if ([previousState isKindOfClass:[DMConfirmResetState class]]) {
+        [self.game.view showResetButton];
     }
 
     [self.game.view enableResetButton];
@@ -33,8 +35,6 @@
 
 - (void)willExitWithNextState:(GKState *)nextState
 {
-    [self.game.view resetPlayerButtonColors];
-    [self.game.view disableBlackButton];
     [self.game.view hideResetButton];
 }
 
