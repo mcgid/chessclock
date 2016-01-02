@@ -93,31 +93,6 @@
     [super viewDidUnload];
 }
 
-- (void)endGameWithWinnerButton:(UIButton *)winner loserButton:(UIButton *)loser
-{
-    [self stopTimer];
-
-    [self.white pause];
-    [self.black pause];
-
-    [self enableBlackButton];
-    [self enableWhiteButton];
-//    [self disablePlayerButtonInteraction];
-    [self hideStartGameLabel];
-
-    self.winnerButton = winner;
-    self.loserButton = loser;
-
-    [self setButtonTitlesToWinLose];
-
-    [self updateInterfaceWithChanges:^{
-        self.pauseButton.enabled = NO;
-        self.resetButton.enabled = YES;
-        [self hidePauseButton];
-    }];
-
-    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-}
 
 #pragma mark -
 #pragma mark IBActions
