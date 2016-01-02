@@ -65,14 +65,14 @@
 
 }
 
-#pragma mark Accessors and Mutators
+#pragma mark State machine
 
 - (Class)state
 {
     return [self.stateMachine.currentState class];
 }
 
-- (void)setState:(Class)state
+- (void)enterState:(Class)state
 {
     [self.stateMachine enterState:state];
 }
@@ -93,7 +93,7 @@
     [self.stateMachine enterState:nextState];
 }
 
-#pragma mark Instance Methods
+#pragma mark Interface updating
 
 - (void)startUpdating
 {

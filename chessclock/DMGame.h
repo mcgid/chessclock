@@ -13,13 +13,13 @@
 @property (nonatomic, readonly) DMClock *white;
 @property (nonatomic, readonly) DMClock *black;
 
-@property (nonatomic) Class state;
-
 @property (nonatomic, weak) DMGameView *view;
 
 - (void)startUpdating;
 - (void)stopUpdating;
 
+- (Class)state;
+- (void)enterState:(Class)state;
 - (void)pushState:(Class)state;
 - (void)popState;
 

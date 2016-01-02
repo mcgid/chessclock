@@ -42,7 +42,7 @@
     DMClockTime blackTime = [self.game.black remainingTime];
 
     if (blackTime.totalSeconds <= 0) {
-        self.game.state = [DMWhiteLostState class];
+        [self.game enterState:[DMWhiteLostState class]];
     } else if (blackTime.minutes != self.displayedTime.minutes ||
                blackTime.seconds != self.displayedTime.seconds) {
         [self.game.view updateWithWhiteTime:blackTime];
