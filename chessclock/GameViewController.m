@@ -136,22 +136,7 @@
 
 
 #pragma mark -
-#pragma mark Delegate methods
-
-- (void)timeSelectionViewController:(DMSettingsViewController *)controller
-                 didSetWhiteSeconds:(NSTimeInterval)whiteSeconds
-                       blackSeconds:(NSTimeInterval)blackSeconds
-{
-    self.white.timeLimit = whiteSeconds;
-    self.black.timeLimit = blackSeconds;
-
-    [self.white reset];
-    [self.black reset];
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-    [self updateInterface];
-}
+#pragma mark <DMGameViewDelegate>
 
 - (void)whiteTimeLimitDidChange:(DMClockTime)time
 {
