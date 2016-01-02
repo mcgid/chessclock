@@ -6,21 +6,14 @@
 //  Copyright (c) 2012 Dan McGinnis. All rights reserved.
 //
 
-#import <AudioToolbox/AudioToolbox.h>
-@import GameplayKit;
-
 #import "GameViewController.h"
+
 #import "DMClock.h"
 #import "DMGame.h"
 #import "DMStates.h"
 
-#import "UIColor+CTRExtensions.h"
-
 @interface GameViewController ()
 
-@property(nonatomic, strong) DMClock * white;
-@property(nonatomic, strong) DMClock * black;
-@property(nonatomic) NSTimer *timer;
 @property(nonatomic, strong) DMGame *game;
 @property (nonatomic, weak) DMGameView *gameView;
 
@@ -28,7 +21,7 @@
 
 @implementation GameViewController
 
-#pragma mark View lifecycle
+#pragma mark Initialization
 
 /**
  * Initialize properties not related to the view
@@ -45,28 +38,10 @@
 {
     [super awakeFromNib];
 
-    self.white = [[DMClock alloc] init];
-    self.black = [[DMClock alloc] init];
-
     self.game = [[DMGame alloc] init];
 
     self.gameView = (DMGameView *)self.view;
 }
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    self.whitePlayerHasEndedFirstTurn = NO;
-    [self updateInterface];
-
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
 
 #pragma mark -
 #pragma mark IBActions
