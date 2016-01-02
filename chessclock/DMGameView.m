@@ -34,9 +34,24 @@
 @property (weak, nonatomic) IBOutlet UIButton *winnerButton;
 @property (weak, nonatomic) IBOutlet UIButton *loserButton;
 
+@property (nonatomic, strong) NSArray *sliderTimes;
+
 @end
 
 @implementation DMGameView
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        _sliderTimes = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15,
+                         @20, @25, @30, @35, @40, @45, @50, @55, @60,
+                         @70, @80, @90, @100, @110, @120];
+    }
+
+    return self;
+}
 
 - (void)setUpSubviews
 {
@@ -413,6 +428,46 @@
     [self.timesButton invalidateIntrinsicContentSize];
 }
 
+#pragma mark IBAction methods
 
+- (IBAction)whiteSliderValueChanged:(id)sender {
+    int value = (int)floorf(self.whiteSlider.value);
+
+    NSNumber *time = self.sliderTimes[value - 1];
+
+    [self.whiteButton setTitle:[NSString stringWithFormat:@"%d:00", time.intValue] forState:UIControlStateNormal];
+}
+
+- (IBAction)blackSliderValueChanged:(id)sender {
+    int value = (int)floorf(self.blackSlider.value);
+
+    NSNumber *time = self.sliderTimes[value - 1];
+
+    [self.blackButton setTitle:[NSString stringWithFormat:@"%d:00", time.intValue] forState:UIControlStateNormal];
+}
+
+- (IBAction)whiteSliderFinishedEditing:(id)sender {
+    int value = (int)floorf(self.whiteSlider.value);
+
+    NSNumber *time = self.sliderTimes[value - 1];
+
+    self.white.timeLimit = time.intValue * 60;
+
+    [self.white reset];
+
+    [self updateInterface];
+}
+
+- (IBAction)blackSliderFinishedEditing:(id)sender {
+    int value = (int)floorf(self.blackSlider.value);
+
+    NSNumber *time = self.sliderTimes[value - 1];
+
+    self.black.timeLimit = time.intValue * 60;
+
+    [self.black reset];
+
+    [self updateInterface];
+}
 
 @end

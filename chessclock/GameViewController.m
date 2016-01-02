@@ -23,7 +23,6 @@
 @property(nonatomic) NSTimer *timer;
 @property(nonatomic, strong) DMGame *game;
 @property (nonatomic, weak) DMGameView *gameView;
-@property (nonatomic, strong) NSArray *sliderTimes;
 @property (nonatomic) BOOL whitePlayerHasEndedFirstTurn;
 
 
@@ -69,14 +68,7 @@
 
     self.game = [[DMGame alloc] init];
 
-
-    self.sliderTimes = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15,
-                         @20, @25, @30, @35, @40, @45, @50, @55, @60,
-                         @70, @80, @90, @100, @110, @120];
-
     self.gameView = (DMGameView *)self.view;
-
-
 }
 
 - (void)viewDidLoad
@@ -142,45 +134,6 @@
     }
 }
 
-- (IBAction)whiteSliderValueChanged:(id)sender {
-    int value = (int)floorf(self.whiteSlider.value);
-
-    NSNumber *time = self.sliderTimes[value - 1];
-
-    [self.whiteButton setTitle:[NSString stringWithFormat:@"%d:00", time.intValue] forState:UIControlStateNormal];
-}
-
-- (IBAction)blackSliderValueChanged:(id)sender {
-    int value = (int)floorf(self.blackSlider.value);
-
-    NSNumber *time = self.sliderTimes[value - 1];
-
-    [self.blackButton setTitle:[NSString stringWithFormat:@"%d:00", time.intValue] forState:UIControlStateNormal];
-}
-
-- (IBAction)whiteSliderFinishedEditing:(id)sender {
-    int value = (int)floorf(self.whiteSlider.value);
-
-    NSNumber *time = self.sliderTimes[value - 1];
-
-    self.white.timeLimit = time.intValue * 60;
-
-    [self.white reset];
-
-    [self updateInterface];
-}
-
-- (IBAction)blackSliderFinishedEditing:(id)sender {
-    int value = (int)floorf(self.blackSlider.value);
-
-    NSNumber *time = self.sliderTimes[value - 1];
-
-    self.black.timeLimit = time.intValue * 60;
-
-    [self.black reset];
-
-    [self updateInterface];
-}
 
 #pragma mark -
 #pragma mark Delegate methods
