@@ -114,4 +114,16 @@
     self.lastUpdateTimestamp = self.displayLink.timestamp;
 }
 
+#pragma mark Time limit changing
+
+- (void)setWhiteTimeLimit:(NSTimeInterval)timeLimit
+{
+    self.white.timeLimit = timeLimit;
+}
+
+- (void)setBlackTimeLimit:(NSTimeInterval)timeLimit
+{
+    self.black.timeLimit = timeLimit;
+}
+
 @end

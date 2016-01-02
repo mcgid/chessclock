@@ -23,4 +23,7 @@
 - (void)pushState:(Class)state;
 - (void)popState;
 
+- (void)setWhiteTimeLimit:(NSTimeInterval)timeLimit;
+- (void)setBlackTimeLimit:(NSTimeInterval)timeLimit;
+
 @end
