@@ -435,7 +435,16 @@
 
     NSNumber *time = self.sliderTimes[value - 1];
 
-    [self.whiteButton setTitle:[NSString stringWithFormat:@"%d:00", time.intValue] forState:UIControlStateNormal];
+    DMClockTime clockTime;
+
+    clockTime.milliseconds = 0;
+    clockTime.seconds = 0;
+    clockTime.minutes = time.intValue;
+    clockTime.totalSeconds = time.doubleValue * 60.0;
+
+    [self.delegate whiteTimeLimitDidChange:clockTime];
+
+    [self updateWithWhiteTime:clockTime];
 }
 
 - (IBAction)blackSliderValueChanged:(id)sender {
@@ -443,31 +452,16 @@
 
     NSNumber *time = self.sliderTimes[value - 1];
 
-    [self.blackButton setTitle:[NSString stringWithFormat:@"%d:00", time.intValue] forState:UIControlStateNormal];
-}
+    DMClockTime clockTime;
 
-- (IBAction)whiteSliderFinishedEditing:(id)sender {
-    int value = (int)floorf(self.whiteSlider.value);
+    clockTime.milliseconds = 0;
+    clockTime.seconds = 0;
+    clockTime.minutes = time.intValue;
+    clockTime.totalSeconds = time.doubleValue * 60.0;
 
-    NSNumber *time = self.sliderTimes[value - 1];
+    [self.delegate blackTimeLimitDidChange:clockTime];
 
-    self.white.timeLimit = time.intValue * 60;
-
-    [self.white reset];
-
-    [self updateInterface];
-}
-
-- (IBAction)blackSliderFinishedEditing:(id)sender {
-    int value = (int)floorf(self.blackSlider.value);
-
-    NSNumber *time = self.sliderTimes[value - 1];
-
-    self.black.timeLimit = time.intValue * 60;
-
-    [self.black reset];
-
-    [self updateInterface];
+    [self updateWithBlackTime:clockTime];
 }
 
 @end
