@@ -98,206 +98,47 @@
 #pragma mark IBActions
 
 - (IBAction)toggleTimes:(id)sender {
-    if (self.game.state == DMNotStarted) {
-        self.game.state = DMChangeTimes;
-        [self selectTimesButton];
-        [self.timesButton layoutIfNeeded];
-        [self updateInterfaceWithChanges:^{
-            [self showSliders];
-            [self disablePlayerButtonInteraction];
-            [self enableBlackButton];
-            [self hideStartGameLabel];
-
-            [self.view layoutIfNeeded];
-        }];
-    } else {
-        self.game.state = DMNotStarted;
-        [self deselectTimesButton];
-        [self.timesButton layoutIfNeeded];
-        [self updateInterfaceWithChanges:^{
-            [self enablePlayerButtonInteraction];
-            [self hideSliders];
-            [self disableBlackButton];
-            [self showStartGameLabel];
-
-            [self.view layoutIfNeeded];
-        }];
+    if (self.game.state == [DMNewGameState class]) {
+        [self.game enterState:[DMSettingsState class]];
+    } else if (self.game.state == [DMSettingsState class]) {
+        [self.game enterState:[DMNewGameState class]];
     }
 }
 
 - (IBAction)togglePaused:(id)sender {
-    if (self.game.state == DMWhiteTurn || self.game.state == DMBlackTurn) {
-        [self pauseGame];
-    }
-    else {
-        [self resumeGame];
+    if ([self.game.state isKindOfClass:[DMTurnState class]]) {
+        [self.game pushState:[DMPausedState class]];
+    } else if (self.game.state == [DMPausedState class]) {
+        [self.game popState];
     }
 }
 
 - (IBAction)toggleReset:(id)sender
 {
-    [self updateInterfaceWithChanges:^{
-        [self showConfirmResetArea];
-        self.resetButton.alpha = 0.0f;
-        self.pauseButton.alpha = 0.0f;
-
-        [self.view layoutIfNeeded];
-    }];
+    [self.game pushState:[DMConfirmResetState class]];
 }
 
 - (IBAction)confirmReset:(id)sender
 {
-    [self.white reset];
-    [self.black reset];
-
-    // Reset the game state
-    self.game.state = DMNotStarted;
-
-    self.whitePlayerHasEndedFirstTurn = NO;
-
-    self.winnerButton = nil;
-    self.loserButton = nil;
-
-    [self updateInterface];
-
-    self.pauseButton.enabled = NO;
-    self.pauseButton.selected = NO;
-    self.resetButton.enabled = NO;
-
-    [self enablePlayerButtonInteraction];
-
-    [self.pauseButton invalidateIntrinsicContentSize];
-
-    [self resetStartGameLabelContent];
-
-    [self updateInterfaceWithChanges:^{
-        [self hideConfirmResetArea];
-        [self enableWhiteButton];
-        [self disableBlackButton];
-        [self showStartGameLabel];
-        [self showTimesButton];
-        [self hideResetButton];
-        [self hidePauseButton];
-        [self resetPlayerButtonColors];
-
-        [self.view layoutIfNeeded];
-    }];
+    [self.game enterState:[DMNewGameState class]];
 }
 
 - (IBAction)cancelReset:(id)sender
 {
-    [self updateInterfaceWithChanges:^{
-        self.resetButton.alpha = 1.0f;
-        self.pauseButton.alpha = 1.0f;
-
-        [self hideConfirmResetArea];
-
-        [self.view layoutIfNeeded];
-    }];
-}
-
-- (IBAction)whiteButtonPressed:(id)sender {
-    if (self.game.state == DMWhiteLostOnTime || self.game.state == DMBlackLostOnTime) {
-        [self setButtonTitlesToTimes];
-    }
-    else {
-        [self disableWhiteButton];
-        [self.view layoutIfNeeded];
-    }
-}
-
-- (IBAction)whiteButtonPressCancelled:(id)sender {
-    if (self.game.state == DMWhiteLostOnTime || self.game.state == DMBlackLostOnTime) {
-        [self setButtonTitlesToWinLose];
-    }
-    else {
-        [self updateInterfaceWithChanges:^{
-            [self enableWhiteButton];
-            [self.view layoutIfNeeded];
-        }];
-    }
+    [self.game popState];
 }
 
 - (IBAction)endWhiteTurn:(id)sender {
-    if (self.game.state == DMNotStarted) {
-
-        [self updateInterfaceWithChanges:^{
-            [self hideStartGameLabel];
-            [self enableWhiteButton];
-
-            [self.view layoutIfNeeded];
-        } animatable:YES completion:^(BOOL finished){
-            [self replaceStartGameLabelContent];
-
-            [self updateInterfaceWithChanges:^{
-                [self showStartGameLabel];
-
-                [self.view layoutIfNeeded];
-            }];
-
-        }];
-
-        [self startGame];
-    }
-    else if (self.game.state == DMWhiteLostOnTime || self.game.state == DMBlackLostOnTime) {
-        [self setButtonTitlesToWinLose];
-    }
-    else {
-        [self.white stop];
-
-        self.game.state = DMBlackTurn;
-
-        self.whitePlayerHasEndedFirstTurn = YES;
-
-        [self updateInterfaceWithChanges:^{
-            [self enableBlackButton];
-            [self hideStartGameLabel];
-
-            [self.view layoutIfNeeded];
-        }];
-
-        [self.black start];
-    }
-}
-
-- (IBAction)blackButtonPressed:(id)sender {
-    if (self.game.state == DMWhiteLostOnTime || self.game.state == DMBlackLostOnTime) {
-        [self setButtonTitlesToTimes];
-    }
-    else {
-        [self disableBlackButton];
-        [self.view layoutIfNeeded];
-    }
-}
-
-- (IBAction)blackButtonPressCancelled:(id)sender {
-    if (self.game.state == DMWhiteLostOnTime || self.game.state == DMBlackLostOnTime) {
-        [self setButtonTitlesToWinLose];
-    }
-    else {
-        [self updateInterfaceWithChanges:^{
-            [self enableBlackButton];
-            [self.view layoutIfNeeded];
-        }];
+    if ([self.game state] == [DMNewGameState class]) {
+        [self.game enterState:[DMWhiteTurnState class]];
+    } else if ([self.game state] == [DMWhiteTurnState class]) {
+        [self.game enterState:[DMBlackTurnState class]];
     }
 }
 
 - (IBAction)endBlackTurn:(id)sender {
-    if (self.game.state == DMWhiteLostOnTime || self.game.state == DMBlackLostOnTime) {
-        [self setButtonTitlesToWinLose];
-    }
-    else {
-        [self.black stop];
-
-        self.game.state = DMWhiteTurn;
-
-        [self updateInterfaceWithChanges:^{
-            [self enableWhiteButton];
-
-            [self.view layoutIfNeeded];
-        }];
-
-        [self.white start];
+    if ([self.game state] == [DMBlackTurnState class]) {
+        [self.game enterState:[DMWhiteTurnState class]];
     }
 }
 
