@@ -153,4 +153,14 @@
     [self updateInterface];
 }
 
+- (void)whiteTimeLimitDidChange:(DMClockTime)time
+{
+    [self.game setWhiteTimeLimit:time.totalSeconds];
+}
+
+- (void)blackTimeLimitDidChange:(DMClockTime)time
+{
+    [self.game setBlackTimeLimit:time.totalSeconds];
+}
+
 @end
