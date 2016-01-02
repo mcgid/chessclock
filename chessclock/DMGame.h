@@ -20,4 +20,7 @@
 - (void)startUpdating;
 - (void)stopUpdating;
 
+- (void)pushState:(Class)state;
+- (void)popState;
+
 @end

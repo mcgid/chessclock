@@ -19,6 +19,7 @@
 @property (nonatomic) GKStateMachine *stateMachine;
 @property (nonatomic) CADisplayLink *displayLink;
 @property (nonatomic) CFTimeInterval lastUpdateTimestamp;
+@property (nonatomic) NSMutableArray *storedStates;
 
 @end
 
@@ -37,6 +38,7 @@
         _black = [[DMClock alloc] init];
         _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
         _lastUpdateTimestamp = 0.0;
+        _storedStates = [[NSMutableArray alloc] initWithCapacity:5];
     }
 
     return self;
@@ -73,6 +75,22 @@
 - (void)setState:(Class)state
 {
     [self.stateMachine enterState:state];
+}
+
+- (void)pushState:(Class)state
+{
+    [self.storedStates addObject:self.stateMachine.currentState];
+
+    [self.stateMachine enterState:state];
+}
+
+- (void)popState
+{
+    Class nextState = self.storedStates.lastObject;
+
+    [self.storedStates removeLastObject];
+
+    [self.stateMachine enterState:nextState];
 }
 
 #pragma mark Instance Methods
