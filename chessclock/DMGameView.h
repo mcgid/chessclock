@@ -8,7 +8,16 @@
 
 #import "DMClock.h"
 
+@protocol DMGameViewDelegate <NSObject>
+
+- (void)whiteTimeLimitDidChange:(DMClockTime)time;
+- (void)blackTimeLimitDidChange:(DMClockTime)time;
+
+@end
+
 @interface DMGameView : UIView
+
+@property (nonatomic, weak) id delegate;
 
 - (void)updateWithWhiteTime:(DMClockTime)time;
 - (void)updateWithBlackTime:(DMClockTime)time;
