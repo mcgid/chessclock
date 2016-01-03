@@ -15,7 +15,6 @@
 @interface GameViewController ()
 
 @property(nonatomic, strong) DMGame *game;
-@property (nonatomic, weak) DMGameView *gameView;
 
 @end
 
@@ -39,8 +38,6 @@
     [super awakeFromNib];
 
     self.game = [[DMGame alloc] init];
-
-    self.gameView = (DMGameView *)self.view;
 }
 
 #pragma mark -
