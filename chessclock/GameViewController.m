@@ -53,6 +53,34 @@
 }
 
 #pragma mark -
+#pragma mark App Lifecycle
+
+- (void)finishLaunching
+{
+    [self.game enterState:[DMLoadingState class]];
+}
+
+- (void)resignActive
+{
+    if ([[self.game state] isKindOfClass:[DMTurnState class]]) {
+        [self.game pushState:[DMPausedState class]];
+    }
+}
+
+#pragma mark -
+#pragma mark <DMGameViewDelegate>
+
+- (void)whiteTimeLimitDidChange:(DMClockTime)time
+{
+    [self.game setWhiteTimeLimit:time.totalSeconds];
+}
+
+- (void)blackTimeLimitDidChange:(DMClockTime)time
+{
+    [self.game setBlackTimeLimit:time.totalSeconds];
+}
+
+#pragma mark -
 #pragma mark IBActions
 
 - (IBAction)toggleTimes:(id)sender {
@@ -98,34 +126,6 @@
     if ([self.game state] == [DMBlackTurnState class]) {
         [self.game enterState:[DMWhiteTurnState class]];
     }
-}
-
-#pragma mark -
-#pragma mark External actions
-
-- (void)finishLaunching
-{
-    [self.game enterState:[DMLoadingState class]];
-}
-
-- (void)resignActive
-{
-    if ([[self.game state] isKindOfClass:[DMTurnState class]]) {
-        [self.game pushState:[DMPausedState class]];
-    }
-}
-
-#pragma mark -
-#pragma mark <DMGameViewDelegate>
-
-- (void)whiteTimeLimitDidChange:(DMClockTime)time
-{
-    [self.game setWhiteTimeLimit:time.totalSeconds];
-}
-
-- (void)blackTimeLimitDidChange:(DMClockTime)time
-{
-    [self.game setBlackTimeLimit:time.totalSeconds];
 }
 
 @end
