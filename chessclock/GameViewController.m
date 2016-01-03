@@ -37,6 +37,18 @@
 {
     [super awakeFromNib];
 
+    // Get notified in order to move game to Loading state
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(finishLaunching)
+                                                 name:UIApplicationDidFinishLaunchingNotification
+                                               object:nil];
+
+    // Get notified to pause game
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resignActive)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
+
     self.game = [[DMGame alloc] initWithView:(DMGameView *)self.view];
 }
 
@@ -91,7 +103,12 @@
 #pragma mark -
 #pragma mark External actions
 
-- (void)pauseGame
+- (void)finishLaunching
+{
+    [self.game enterState:[DMLoadingState class]];
+}
+
+- (void)resignActive
 {
     if ([[self.game state] isKindOfClass:[DMTurnState class]]) {
         [self.game pushState:[DMPausedState class]];

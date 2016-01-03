@@ -12,6 +12,4 @@
 
 @interface GameViewController : UIViewController <DMGameViewDelegate>
 
-- (void)pauseGame;
-
 @end
