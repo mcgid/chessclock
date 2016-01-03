@@ -33,7 +33,6 @@
 		37AC72031512985B00194BD1 /* DMClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC72021512985B00194BD1 /* DMClock.m */; };
 		37AF871F16498D74006E245D /* DMGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AF871E16498D74006E245D /* DMGame.m */; };
 		37C3E1BB179F2C0B00C557BC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C3E1BA179F2C0B00C557BC /* AudioToolbox.framework */; };
-		37FFF8A61C27B6BE009CF3D6 /* DMStates.h in Sources */ = {isa = PBXBuildFile; fileRef = 37FFF8A51C27B6BE009CF3D6 /* DMStates.h */; };
 		37FFF8A81C27B855009CF3D6 /* DMLoadingState.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFF8A71C27B855009CF3D6 /* DMLoadingState.m */; };
 /* End PBXBuildFile section */
 
@@ -261,7 +260,6 @@
 				37AC72031512985B00194BD1 /* DMClock.m in Sources */,
 				3790086815334FFE00B61AE8 /* DMSettingsViewController.m in Sources */,
 				374B330E1C290F4E00CF9132 /* DMBlackTurnState.m in Sources */,
-				37FFF8A61C27B6BE009CF3D6 /* DMStates.h in Sources */,
 				37FFF8A81C27B855009CF3D6 /* DMLoadingState.m in Sources */,
 				374635081C24940000880DBF /* DMGameView.m in Sources */,
 				374B330C1C290F4E00CF9132 /* DMBlackLostState.m in Sources */,
