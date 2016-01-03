@@ -12,8 +12,10 @@
 
 @property (nonatomic, readonly) DMClock *white;
 @property (nonatomic, readonly) DMClock *black;
+@property (nonatomic, readonly, weak) DMGameView *view;
 
-@property (nonatomic, weak) DMGameView *view;
+// Designated initializer
+- (instancetype)initWithView:(DMGameView *)view;
 
 - (void)startUpdating;
 - (void)stopUpdating;

@@ -30,6 +30,11 @@
 
 - (instancetype)init
 {
+    return [self initWithView:nil];
+}
+
+- (instancetype)initWithView:(DMGameView *)view
+{
     self = [super init];
 
     if (self) {

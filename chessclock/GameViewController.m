@@ -37,7 +37,7 @@
 {
     [super awakeFromNib];
 
-    self.game = [[DMGame alloc] init];
+    self.game = [[DMGame alloc] initWithView:(DMGameView *)self.view];
 }
 
 #pragma mark -
