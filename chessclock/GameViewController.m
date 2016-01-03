@@ -91,6 +91,15 @@
     }
 }
 
+#pragma mark -
+#pragma mark External actions
+
+- (void)pauseGame
+{
+    if ([[self.game state] isKindOfClass:[DMTurnState class]]) {
+        [self.game pushState:[DMPausedState class]];
+    }
+}
 
 #pragma mark -
 #pragma mark <DMGameViewDelegate>
