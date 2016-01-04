@@ -22,33 +22,29 @@
 
 #pragma mark Initialization
 
-/**
- * Initialize properties not related to the view
- *
- * Why awakeFromNib and not initWithCoder or another init*?
- *
- * initWithCoder is the designated initializer for UIViewController, so it's the
- * flavour of init* to use. Apparently, though, it may not be safe to use
- * accessors in initWithCoder (see http://stackoverflow.com/a/15508256).
- * 
- * This stuff could also be done in viewDidLoad, but that feels gross.
- */
-- (void)awakeFromNib
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    [super awakeFromNib];
+    self = [super initWithCoder:aDecoder];
 
-    // Get notified in order to move game to Loading state
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(finishLaunching)
-                                                 name:UIApplicationDidFinishLaunchingNotification
-                                               object:nil];
+    if (self) {
+        // Get notified in order to move game to Loading state
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(finishLaunching)
+                                                     name:UIApplicationDidFinishLaunchingNotification
+                                                   object:nil];
 
-    // Get notified to pause game
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(resignActive)
-                                                 name:UIApplicationWillResignActiveNotification
-                                               object:nil];
+        // Get notified to pause game
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(resignActive)
+                                                     name:UIApplicationWillResignActiveNotification
+                                                   object:nil];
+    }
 
+    return self;
+}
+
+- (void)viewDidLoad
+{
     self.game = [[DMGame alloc] initWithView:(DMGameView *)self.view];
 }
 
