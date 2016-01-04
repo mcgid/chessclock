@@ -55,6 +55,8 @@
     DMLoadingState * loadingState = [[DMLoadingState alloc] initWithGame:self];
     DMNewGameState * newGameState = [[DMNewGameState alloc] initWithGame:self];
     DMSettingsState * settingsState = [[DMSettingsState alloc] initWithGame:self];
+    DMPausedState * pausedState = [[DMPausedState alloc] initWithGame:self];
+    DMConfirmResetState *confirmResetState = [[DMConfirmResetState alloc] initWithGame:self];
     DMWhiteTurnState * whiteTurnState = [[DMWhiteTurnState alloc] initWithGame:self];
     DMWhiteLostState * whiteLostState = [[DMWhiteLostState alloc] initWithGame:self];
     DMBlackTurnState * blackTurnState = [[DMBlackTurnState alloc] initWithGame:self];
@@ -63,6 +65,8 @@
     return @[loadingState,
              newGameState,
              settingsState,
+             pausedState,
+             confirmResetState,
              whiteTurnState,
              whiteLostState,
              blackTurnState,
