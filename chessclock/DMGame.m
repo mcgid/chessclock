@@ -39,6 +39,7 @@
 
     if (self) {
         _stateMachine = [[GKStateMachine alloc] initWithStates:[self initialStates]];
+        _view = view;
         _white = [[DMClock alloc] init];
         _black = [[DMClock alloc] init];
         _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
