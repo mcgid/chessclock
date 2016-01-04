@@ -96,11 +96,11 @@
 
 - (void)popState
 {
-    Class nextState = self.storedStates.lastObject;
+    Class storedState = self.storedStates.lastObject;
 
     [self.storedStates removeLastObject];
 
-    [self.stateMachine enterState:nextState];
+    [self.stateMachine enterState:[storedState class]];
 }
 
 #pragma mark Interface updating
