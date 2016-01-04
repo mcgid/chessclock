@@ -58,6 +58,15 @@
 - (void)finishLaunching
 {
     [self.game enterState:[DMLoadingState class]];
+
+    // Future feature: Saved game
+    // At this point, we can check for a saved game. If we find
+    // one, we can then transition to its saved state from Loading.
+    // That's the reason for these weird consecutive enterState: calls -- the
+    // Loading state exits so that when there is machinery for saving game,
+    // there's a logical interface transition path.
+
+    [self.game enterState:[DMNewGameState class]];
 }
 
 - (void)resignActive
