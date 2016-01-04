@@ -67,7 +67,7 @@
 
 - (void)resignActive
 {
-    if ([[self.game state] isKindOfClass:[DMTurnState class]]) {
+    if ([[self.game state] isSubclassOfClass:[DMTurnState class]]) {
         [self.game pushState:[DMPausedState class]];
     }
 }
@@ -97,7 +97,7 @@
 }
 
 - (IBAction)togglePaused:(id)sender {
-    if ([self.game.state isKindOfClass:[DMTurnState class]]) {
+    if ([self.game.state isSubclassOfClass:[DMTurnState class]]) {
         [self.game pushState:[DMPausedState class]];
     } else if (self.game.state == [DMPausedState class]) {
         [self.game popState];
