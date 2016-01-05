@@ -8,6 +8,15 @@
 
 #import "DMGameViewAnimator.h"
 
+static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
+
+@interface DMGameViewAnimator ()
+
+- (void)animateAnimations:(void (^)(void))animations;
+
+@end
+
+
 @implementation DMGameViewAnimator
 
 #pragma mark Initialization
@@ -26,6 +35,14 @@
     }
 
     return self;
+}
+
+#pragma mark Internal animation methods
+
+- (void)animateAnimations:(void (^)(void))animations
+{
+    [UIView animateWithDuration:DMGameViewAnimatorAnimationDuration
+                     animations:animations];
 }
 
 #pragma mark From Loading state
