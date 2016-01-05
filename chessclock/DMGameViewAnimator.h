@@ -6,10 +6,10 @@
 //
 //
 
-#import "DMInterfaceProtocol.h"
+#import "DMInterfaceTransitioning.h"
 #import "DMGameView.h"
 
-@interface DMGameViewAnimator : NSObject <DMInterfaceProtocol>
+@interface DMGameViewAnimator : NSObject <DMInterfaceTransitioning>
 
 @property (nonatomic, readonly) DMGameView *view;
 

@@ -38,7 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37035AD81C3C75F9007DD65D /* DMInterfaceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterfaceProtocol.h; sourceTree = "<group>"; };
+		37035AD81C3C75F9007DD65D /* DMInterfaceTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterfaceTransitioning.h; sourceTree = "<group>"; };
 		37035AD91C3C7828007DD65D /* DMGameViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGameViewAnimator.h; sourceTree = "<group>"; };
 		37035ADA1C3C7828007DD65D /* DMGameViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGameViewAnimator.m; sourceTree = "<group>"; };
 		3723525117FC7EED000BF4EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				3790086715334FFE00B61AE8 /* DMSettingsViewController.m */,
 				374635061C24940000880DBF /* DMGameView.h */,
 				374635071C24940000880DBF /* DMGameView.m */,
-				37035AD81C3C75F9007DD65D /* DMInterfaceProtocol.h */,
+				37035AD81C3C75F9007DD65D /* DMInterfaceTransitioning.h */,
 				37035AD91C3C7828007DD65D /* DMGameViewAnimator.h */,
 				37035ADA1C3C7828007DD65D /* DMGameViewAnimator.m */,
 				37AF871D16498D74006E245D /* DMGame.h */,

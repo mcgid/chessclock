@@ -1,12 +1,12 @@
 //
-//  DMInterfaceProtocol.h
+//  DMInterfaceTransitioning.h
 //  chessclock
 //
 //  Created by Dan on 2016-01-05.
 //
 //
 
-@protocol DMInterfaceProtocol <NSObject>
+@protocol DMInterfaceTransitioning <NSObject>
 
 // From Loading state
 - (void)transitionFromLoadingToNewGame;
