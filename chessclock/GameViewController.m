@@ -11,9 +11,11 @@
 #import "DMClock.h"
 #import "DMGame.h"
 #import "DMStates.h"
+#import "DMGameViewAnimator.h"
 
 @interface GameViewController ()
 
+@property (nonatomic) DMGameViewAnimator *gameViewAnimator;
 @property(nonatomic, strong) DMGame *game;
 
 @end
@@ -45,7 +47,8 @@
 
 - (void)viewDidLoad
 {
-    self.game = [[DMGame alloc] initWithView:(DMGameView *)self.view];
+    self.gameViewAnimator = [[DMGameViewAnimator alloc] initWithView:(DMGameView *)self.view];
+    self.game = [[DMGame alloc] initWithInterface:self.gameViewAnimator];
 }
 
 #pragma mark -

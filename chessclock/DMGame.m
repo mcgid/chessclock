@@ -27,19 +27,19 @@
 @implementation DMGame
 
 #pragma mark Initialization
-
 - (instancetype)init
 {
-    return [self initWithView:nil];
+    return [self initWithInterface:nil];
 }
 
-- (instancetype)initWithView:(DMGameView *)view
+
+- (instancetype)initWithInterface:(id<DMInterfaceTransitioning>)interface
 {
     self = [super init];
 
     if (self) {
         _stateMachine = [[GKStateMachine alloc] initWithStates:[self initialStates]];
-        _view = view;
+        _interface = interface;
         _white = [[DMClock alloc] init];
         _black = [[DMClock alloc] init];
         _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
