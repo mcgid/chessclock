@@ -13,11 +13,11 @@
 
 @implementation DMBlackLostState
 
-- (void)didEnterWithPreviousState:(GKState *)previousState
+- (void)willExitWithNextState:(GKState *)nextState
 {
-    [super didEnterWithPreviousState:previousState];
-
-    [self.game.view makeBlackButtonWinner];
+    if ([nextState isKindOfClass:[DMConfirmResetState class]]) {
+        [self.game.interface interfaceShouldTransitionFromBlackLostToConfirmReset:self];
+    }
 }
 
 @end

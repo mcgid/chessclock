@@ -10,6 +10,19 @@
 
 @implementation DMLoadingState
 
-
+- (void)willExitWithNextState:(GKState *)nextState
+{
+    if ([nextState isKindOfClass:[DMNewGameState class]]) {
+        [self.game.interface interfaceShouldTransitionFromLoadingToNewGame:self];
+    } else if ([nextState isKindOfClass:[DMSettingsState class]]) {
+        [self.game.interface interfaceShouldTransitionFromLoadingToSettings:self];
+    } else if ([nextState isKindOfClass:[DMPausedState class]]) {
+        [self.game.interface interfaceShouldTransitionFromLoadingToPaused:self];
+    } else if ([nextState isKindOfClass:[DMWhiteLostState class]]) {
+        [self.game.interface interfaceShouldTransitionFromLoadingToWhiteLost:self];
+    } else if ([nextState isKindOfClass:[DMBlackLostState class]]) {
+        [self.game.interface interfaceShouldTransitionFromLoadingToBlackLost:self];
+    }
+}
 
 @end

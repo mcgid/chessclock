@@ -13,37 +13,14 @@
 
 @implementation DMPausedState
 
-- (void)didEnterWithPreviousState:(GKState *)previousState
-{
-    if ([previousState isKindOfClass:[DMLoadingState class]]) {
-        // Show the player times, disabled
-        [self.game.view disableWhiteButton];
-        [self.game.view disableBlackButton];
-
-        // Show the reset and resume buttons
-        [self.game.view showPauseButton];
-        [self.game.view showResetButton];
-    } else if ([previousState isKindOfClass:[DMConfirmResetState class]]) {
-        [self.game.view showPauseButton];
-        [self.game.view showResetButton];
-    }
-
-    // Change the label of the pause button to 'resume'
-    [self.game.view selectPauseButton];
-
-    [self.game.view enableResetButton];
-}
-
 - (void)willExitWithNextState:(GKState *)nextState
 {
-    if ([nextState isKindOfClass:[DMConfirmResetState class]]) {
-        [self.game.view hidePauseButton];
-        [self.game.view hideResetButton];
-    } else if ([nextState isKindOfClass:[DMTurnState class]]) {
-        // Change the label of the pause button back to 'pause'
-        [self.game.view deselectPauseButton];
-
-        [self.game.view disableResetButton];
+    if ([nextState isKindOfClass:[DMWhiteTurnState class]]) {
+        [self.game.interface interfaceShouldTransitionFromPausedToWhiteTurn:self];
+    } else if ([nextState isKindOfClass:[DMBlackTurnState class]]) {
+        [self.game.interface interfaceShouldTransitionFromPausedToBlackTurn:self];
+    } else if ([nextState isKindOfClass:[DMConfirmResetState class]]) {
+        [self.game.interface interfaceShouldTransitionFromPausedToConfirmReset:self];
     }
 }
 

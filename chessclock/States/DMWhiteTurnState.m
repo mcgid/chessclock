@@ -37,11 +37,6 @@
     // Start the white clock
     [self.game.white start];
 
-    [self.game.view enableWhiteButton];
-
-    if ([previousState isKindOfClass:[DMBlackTurnState class]]) {
-        [self.game.view disableBlackButton];
-    }
 }
 
 - (void)willExitWithNextState:(GKState *)nextState
@@ -51,12 +46,12 @@
     // Stop the white clock
     [self.game.white stop];
 
-    [self.game.view disableWhiteButton];
-
-    if (self.isFirstTurn) {
-        [self.game.view hideStartGameLabel];
-
-        self.isFirstTurn = NO;
+    if ([nextState isKindOfClass:[DMWhiteLostState class]]) {
+        [self.game.interface interfaceShouldTransitionFromWhiteTurnToWhiteLost:self];
+    } else if ([nextState isKindOfClass:[DMPausedState class]]) {
+        [self.game.interface interfaceShouldTransitionFromWhiteTurnToPaused:self];
+    } else if ([nextState isKindOfClass:[DMBlackTurnState class]]) {
+        [self.game.interface interfaceShouldTransitionFromWhiteTurnToBlackTurn:self];
     }
 }
 

@@ -19,12 +19,6 @@
 
     // Start the black clock
     [self.game.black start];
-
-    [self.game.view enableBlackButton];
-
-    if ([previousState isKindOfClass:[DMWhiteTurnState class]]) {
-        [self.game.view disableWhiteButton];
-    }
 }
 
 - (void)willExitWithNextState:(GKState *)nextState
@@ -34,7 +28,13 @@
     // Stop the white clock
     [self.game.black stop];
 
-    [self.game.view disableBlackButton];
+    if ([nextState isKindOfClass:[DMBlackLostState class]]) {
+        [self.game.interface interfaceShouldTransitionFromBlackTurnToBlackLost:self];
+    } else if ([nextState isKindOfClass:[DMPausedState class]]) {
+        [self.game.interface interfaceShouldTransitionFromBlackTurnToPaused:self];
+    } else if ([nextState isKindOfClass:[DMWhiteTurnState class]]) {
+        [self.game.interface interfaceShouldTransitionFromBlackTurnToWhiteTurn:self];
+    }
 }
 
 - (void)updateWithDeltaTime:(NSTimeInterval)seconds

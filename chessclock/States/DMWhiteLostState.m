@@ -13,11 +13,11 @@
 
 @implementation DMWhiteLostState
 
-- (void)didEnterWithPreviousState:(GKState *)previousState
+- (void)willExitWithNextState:(GKState *)nextState
 {
-    [super didEnterWithPreviousState:previousState];
-
-    [self.game.view makeWhiteButtonWinner];
+    if ([nextState isKindOfClass:[DMConfirmResetState class]]) {
+        [self.game.interface interfaceShouldTransitionFromWhiteLostToConfirmReset:self];
+    }
 }
 
 @end

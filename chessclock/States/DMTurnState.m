@@ -18,19 +18,6 @@
     // Prevent screen from dimming
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 
-    if ([previousState isKindOfClass:[DMNewGameState class]]) {
-        [self.game.view showPauseButton];
-        [self.game.view showResetButton];
-
-        [self.game.view enablePauseButton];
-        [self.game.view disableResetButton];
-
-    }
-    else if ([previousState isKindOfClass:[DMPausedState class]]) {
-        [self.game.view disableResetButton];
-        [self.game.view deselectPauseButton];
-    }
-
     [self.game startUpdating];
 }
 

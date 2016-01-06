@@ -13,20 +13,17 @@
 
 @implementation DMConfirmResetState
 
-- (void)didEnterWithPreviousState:(GKState *)previousState
-{
-    [self.game.view showConfirmResetArea];
-}
-
 - (void)willExitWithNextState:(GKState *)nextState
 {
-    if ([nextState isKindOfClass:[DMNewGameState class]]) {
-        [self.game.view resetPlayerButtonColors];
-        [self.game.view disableBlackButton];
-        [self.game.view hideResetButton];
+    if ([nextState isKindOfClass:[DMWhiteLostState class]]) {
+        [self.game.interface interfaceShouldTransitionFromConfirmResetToWhiteLost:self];
+    } else if ([nextState isKindOfClass:[DMBlackLostState class]]) {
+        [self.game.interface interfaceShouldTransitionFromConfirmResetToBlackLost:self];
+    } else if ([nextState isKindOfClass:[DMPausedState class]]) {
+        [self.game.interface interfaceShouldTransitionFromConfirmResetToPaused:self];
+    } else if ([nextState isKindOfClass:[DMNewGameState class]]) {
+        [self.game.interface interfaceShouldTransitionFromConfirmResetToNewGame:self];
     }
-
-    [self.game.view hideConfirmResetArea];
 }
 
 @end
