@@ -51,7 +51,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 // happen before the interface appears on screen when loading.
 
 
-- (void)transitionFromLoadingToNewGame
+- (void)interfaceShouldTransitionFromLoadingToNewGame:(id)sender
 {
     [self.view showTimesButton];
     [self.view enableWhiteButton];
@@ -59,7 +59,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     [self.view showStartGameLabel];
 }
 
-- (void)transitionFromLoadingToSettings
+- (void)interfaceShouldTransitionFromLoadingToSettings:(id)sender
 {
     [self.view showTimesButton];
     [self.view selectTimesButton];
@@ -68,7 +68,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     [self.view disablePlayerButtonInteraction];
 }
 
-- (void)transitionFromLoadingToPaused
+- (void)interfaceShouldTransitionFromLoadingToPaused:(id)sender
 {
     [self.view disableWhiteButton];
     [self.view disableBlackButton];
@@ -78,12 +78,12 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     [self.view enableBlackButton];
 }
 
-- (void)transitionFromLoadingToConfirmReset
+- (void)interfaceShouldTransitionFromLoadingToConfirmReset:(id)sender
 {
     [self.view showConfirmResetArea];
 }
 
-- (void)transitionFromLoadingToWhiteLost
+- (void)interfaceShouldTransitionFromLoadingToWhiteLost:(id)sender
 {
     [self.view showPauseButton];
     [self.view disablePauseButton];
@@ -92,7 +92,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     [self.view makeWhiteButtonWinner];
 }
 
-- (void)transitionFromLoadingToBlackLost
+- (void)interfaceShouldTransitionFromLoadingToBlackLost:(id)sender
 {
     [self.view showPauseButton];
     [self.view disablePauseButton];
@@ -104,7 +104,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From NewGame state
 
-- (void)transitionFromNewGameToSettings
+- (void)interfaceShouldTransitionFromNewGameToSettings:(id)sender
 {
     // May need to add layoutIfNeeded inside -selectTimesButton (and others)
     [self.view selectTimesButton];
@@ -118,7 +118,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromNewGameToWhiteTurn
+- (void)interfaceShouldTransitionFromNewGameToWhiteTurn:(id)sender
 {
     // TODO: Is this animatable or not? Should it go in the block?
     // If not, should '-enableBlackButton' in the above method be in that block
@@ -137,7 +137,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From Settings state
 
-- (void)transitionFromSettingsToNewGame
+- (void)interfaceShouldTransitionFromSettingsToNewGame:(id)sender
 {
     [self.view deselectTimesButton];
 
@@ -153,7 +153,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From WhiteTurn state
 
-- (void)transitionFromWhiteTurnToWhiteLost
+- (void)interfaceShouldTransitionFromWhiteTurnToWhiteLost:(id)sender
 {
     [self animateAnimations:^{
         [self.view hidePauseButton];
@@ -164,7 +164,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromWhiteTurnToPaused
+- (void)interfaceShouldTransitionFromWhiteTurnToPaused:(id)sender
 {
     [self.view selectPauseButton];
 
@@ -174,7 +174,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromWhiteTurnToBlackTurn
+- (void)interfaceShouldTransitionFromWhiteTurnToBlackTurn:(id)sender
 {
     [self animateAnimations:^{
         [self.view disableWhiteButton];
@@ -185,7 +185,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From BlackTurn state
 
-- (void)transitionFromBlackTurnToBlackLost
+- (void)interfaceShouldTransitionFromBlackTurnToBlackLost:(id)sender
 {
     [self animateAnimations:^{
         [self.view hidePauseButton];
@@ -196,7 +196,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromBlackTurnToPaused
+- (void)interfaceShouldTransitionFromBlackTurnToPaused:(id)sender
 {
     [self.view selectPauseButton];
 
@@ -206,7 +206,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromBlackTurnToWhiteTurn
+- (void)interfaceShouldTransitionFromBlackTurnToWhiteTurn:(id)sender
 {
     [self animateAnimations:^{
         [self.view disableBlackButton];
@@ -217,7 +217,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From Paused state
 // TODO: Deal with the isFirstTurn label situation
-- (void)transitionFromPausedToWhiteTurn
+- (void)interfaceShouldTransitionFromPausedToWhiteTurn:(id)sender
 {
     [self.view deselectPauseButton];
     [self.view disableResetButton];
@@ -227,7 +227,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromPausedToBlackTurn
+- (void)interfaceShouldTransitionFromPausedToBlackTurn:(id)sender
 {
     [self.view deselectPauseButton];
     [self.view disableResetButton];
@@ -237,7 +237,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromPausedToConfirmReset
+- (void)interfaceShouldTransitionFromPausedToConfirmReset:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideResetButton];
@@ -249,7 +249,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From WhiteLost state
 
-- (void)transitionFromWhiteLostToConfirmReset
+- (void)interfaceShouldTransitionFromWhiteLostToConfirmReset:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideResetButton];
@@ -260,7 +260,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From WhiteLost state
 
-- (void)transitionFromBlackLostToConfirmReset
+- (void)interfaceShouldTransitionFromBlackLostToConfirmReset:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideResetButton];
@@ -271,7 +271,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From ConfirmReset state
 
-- (void)transitionFromConfirmResetToWhiteLost
+- (void)interfaceShouldTransitionFromConfirmResetToWhiteLost:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideConfirmResetArea];
@@ -279,7 +279,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromConfirmResetToBlackLost
+- (void)interfaceShouldTransitionFromConfirmResetToBlackLost:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideConfirmResetArea];
@@ -287,7 +287,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromConfirmResetToPaused
+- (void)interfaceShouldTransitionFromConfirmResetToPaused:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideConfirmResetArea];
@@ -296,7 +296,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     }];
 }
 
-- (void)transitionFromConfirmResetToNewGame
+- (void)interfaceShouldTransitionFromConfirmResetToNewGame:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideConfirmResetArea];
