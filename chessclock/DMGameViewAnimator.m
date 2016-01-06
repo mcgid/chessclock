@@ -139,6 +139,15 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)transitionFromSettingsToNewGame
 {
+    [self.view deselectTimesButton];
+
+    [self.view disablePlayerButtonInteraction];
+
+    [self animateAnimations:^{
+        [self.view showStartGameLabel];
+        [self.view hideSliders];
+        [self.view disableBlackButton];
+    }];
 }
 
 
@@ -146,14 +155,31 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)transitionFromWhiteTurnToWhiteLost
 {
+    [self animateAnimations:^{
+        [self.view hidePauseButton];
+        [self.view enableResetButton];
+        [self.view enableWhiteButton];
+        [self.view enableBlackButton];
+        [self.view makeWhiteButtonWinner];
+    }];
 }
 
 - (void)transitionFromWhiteTurnToPaused
 {
+    [self.view selectPauseButton];
+
+    [self animateAnimations:^{
+        [self.view disableWhiteButton];
+        [self.view enableResetButton];
+    }];
 }
 
 - (void)transitionFromWhiteTurnToBlackTurn
 {
+    [self animateAnimations:^{
+        [self.view disableWhiteButton];
+        [self.view enableBlackButton];
+    }];
 }
 
 
@@ -161,14 +187,31 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)transitionFromBlackTurnToBlackLost
 {
+    [self animateAnimations:^{
+        [self.view hidePauseButton];
+        [self.view enableResetButton];
+        [self.view enableWhiteButton];
+        [self.view enableBlackButton];
+        [self.view makeBlackButtonWinner];
+    }];
 }
 
 - (void)transitionFromBlackTurnToPaused
 {
+    [self.view selectPauseButton];
+
+    [self animateAnimations:^{
+        [self.view disableBlackButton];
+        [self.view enableWhiteButton];
+    }];
 }
 
 - (void)transitionFromBlackTurnToWhiteTurn
 {
+    [self animateAnimations:^{
+        [self.view disableBlackButton];
+        [self.view enableWhiteButton];
+    }];
 }
 
 
