@@ -382,6 +382,9 @@
     self.confirmResetLabel.alpha = 1.0f;
     self.cancelResetButton.alpha = 1.0f;
     self.confirmResetButton.alpha = 1.0f;
+
+    // Needed when changing constraint constant
+    [self layoutIfNeeded];
 }
 
 - (void)hideConfirmResetArea
@@ -390,6 +393,9 @@
     self.confirmResetLabel.alpha = 0.0f;
     self.cancelResetButton.alpha = 0.0f;
     self.confirmResetButton.alpha = 0.0f;
+
+    // Needed when changing constraint constant
+    [self layoutIfNeeded];
 }
 
 - (void)resetPlayerButtonColors

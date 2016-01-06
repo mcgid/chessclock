@@ -42,6 +42,9 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)animateAnimations:(void (^)(void))animations
 {
+    // Force pending layout operations before any frame changes in the animations
+    [self.view layoutIfNeeded];
+
     [UIView animateWithDuration:DMGameViewAnimatorAnimationDuration
                      animations:animations];
 }
