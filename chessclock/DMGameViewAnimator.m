@@ -37,6 +37,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     return self;
 }
 
+#pragma mark -
 #pragma mark Internal animation methods
 
 - (void)animateAnimations:(void (^)(void))animations
@@ -44,6 +45,9 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     [UIView animateWithDuration:DMGameViewAnimatorAnimationDuration
                      animations:animations];
 }
+
+#pragma mark -
+#pragma mark <DMInterfaceTransitioning>
 
 #pragma mark From Loading state
 
