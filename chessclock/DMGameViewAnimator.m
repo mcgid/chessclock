@@ -47,28 +47,58 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 #pragma mark From Loading state
 
+// None of these methods use -animateAnimations: because all changes should
+// happen before the interface appears on screen when loading.
+
+
 - (void)transitionFromLoadingToNewGame
 {
+    [self.view showTimesButton];
+    [self.view enableWhiteButton];
+    [self.view disableBlackButton];
+    [self.view showStartGameLabel];
 }
 
 - (void)transitionFromLoadingToSettings
 {
+    [self.view showTimesButton];
+    [self.view selectTimesButton];
+    [self.view showSliders];
+    [self.view enableBlackButton];
+    [self.view disablePlayerButtonInteraction];
 }
 
 - (void)transitionFromLoadingToPaused
 {
+    [self.view disableWhiteButton];
+    [self.view disableBlackButton];
+    [self.view showPauseButton];
+    [self.view selectTimesButton];
+    [self.view showResetButton];
+    [self.view enableBlackButton];
 }
 
 - (void)transitionFromLoadingToConfirmReset
 {
+    [self.view showConfirmResetArea];
 }
 
 - (void)transitionFromLoadingToWhiteLost
 {
+    [self.view showPauseButton];
+    [self.view disablePauseButton];
+    [self.view showResetButton];
+    [self.view enableResetButton];
+    [self.view makeWhiteButtonWinner];
 }
 
 - (void)transitionFromLoadingToBlackLost
 {
+    [self.view showPauseButton];
+    [self.view disablePauseButton];
+    [self.view showResetButton];
+    [self.view enableResetButton];
+    [self.view makeBlackButtonWinner];
 }
 
 
@@ -76,10 +106,32 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)transitionFromNewGameToSettings
 {
+    // May need to add layoutIfNeeded inside -selectTimesButton (and others)
+    [self.view selectTimesButton];
+
+    [self.view disablePlayerButtonInteraction];
+
+    [self animateAnimations:^{
+        [self.view hideStartGameLabel];
+        [self.view showSliders];
+        [self.view enableBlackButton];
+    }];
 }
 
 - (void)transitionFromNewGameToWhiteTurn
 {
+    // TODO: Is this animatable or not? Should it go in the block?
+    // If not, should '-enableBlackButton' in the above method be in that block
+    // or not? I always put the enable/disable calls in the blocks in the old
+    // version, but that's no guarantee of anything.
+    [self.view disableResetButton];
+
+    [self animateAnimations:^{
+        [self.view hideTimesButton];
+        [self.view showPauseButton];
+        [self.view showResetButton];
+        [self.view enableWhiteButton];
+    }];
 }
 
 
@@ -121,7 +173,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 
 #pragma mark From Paused state
-
+// TODO: Deal with the isFirstTurn label situation
 - (void)transitionFromPausedToWhiteTurn
 {
 }
