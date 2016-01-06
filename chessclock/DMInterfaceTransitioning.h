@@ -6,6 +6,9 @@
 //
 //
 
+// Ugly import for DMClockTime, hopefully to be removed later
+#import "DMClock.h"
+
 @protocol DMInterfaceTransitioning <NSObject>
 
 // From Loading state
@@ -49,5 +52,9 @@
 
 // From BlackLost state
 - (void)interfaceShouldTransitionFromBlackLostToConfirmReset:(id)sender;
+
+// Updating clock times
+- (void)interfaceShouldUpdateWithWhiteTime:(DMClockTime)remainingTime;
+- (void)interfaceShouldUpdateWithBlackTime:(DMClockTime)remainingTime;
 
 @end

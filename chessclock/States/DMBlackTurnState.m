@@ -45,7 +45,7 @@
         [self.game enterState:[DMWhiteLostState class]];
     } else if (blackTime.minutes != self.displayedTime.minutes ||
                blackTime.seconds != self.displayedTime.seconds) {
-        [self.game.view updateWithWhiteTime:blackTime];
+        [self.game.interface interfaceShouldUpdateWithBlackTime:blackTime];
         self.displayedTime = blackTime;
     }
 }

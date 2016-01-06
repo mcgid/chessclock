@@ -313,4 +313,18 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 }
 
 
+#pragma mark Updating clock times
+
+- (void)interfaceShouldUpdateWithWhiteTime:(DMClockTime)remainingTime
+{
+    [self.view updateWithWhiteTime:remainingTime];
+
+}
+
+- (void)interfaceShouldUpdateWithBlackTime:(DMClockTime)remainingTime
+{
+    [self.view updateWithBlackTime:remainingTime];
+}
+
+
 @end
