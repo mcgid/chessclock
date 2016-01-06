@@ -11,7 +11,7 @@
 
 @interface DMGameViewAnimator : NSObject <DMInterfaceTransitioning>
 
-@property (nonatomic, readonly) DMGameView *view;
+@property (nonatomic, weak, readonly) DMGameView *view;
 
 // Designated initializer
 - (instancetype)initWithView:(DMGameView *)view;
