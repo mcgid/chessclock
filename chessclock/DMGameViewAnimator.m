@@ -273,18 +273,39 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)transitionFromConfirmResetToWhiteLost
 {
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showResetButton];
+    }];
 }
 
 - (void)transitionFromConfirmResetToBlackLost
 {
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showResetButton];
+    }];
 }
 
 - (void)transitionFromConfirmResetToPaused
 {
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showResetButton];
+        [self.view showPauseButton];
+    }];
 }
 
 - (void)transitionFromConfirmResetToNewGame
 {
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showTimesButton];
+        [self.view resetPlayerButtonColors];
+        [self.view enableWhiteButton];
+        [self.view disableBlackButton];
+        [self.view showStartGameLabel];
+    }];
 }
 
 
