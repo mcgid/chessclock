@@ -219,14 +219,31 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 // TODO: Deal with the isFirstTurn label situation
 - (void)transitionFromPausedToWhiteTurn
 {
+    [self.view deselectPauseButton];
+    [self.view disableResetButton];
+
+    [self animateAnimations:^{
+        [self.view enableWhiteButton];
+    }];
 }
 
 - (void)transitionFromPausedToBlackTurn
 {
+    [self.view deselectPauseButton];
+    [self.view disableResetButton];
+
+    [self animateAnimations:^{
+        [self.view enableBlackButton];
+    }];
 }
 
 - (void)transitionFromPausedToConfirmReset
 {
+    [self animateAnimations:^{
+        [self.view hideResetButton];
+        [self.view hidePauseButton];
+        [self.view showConfirmResetArea];
+    }];
 }
 
 
