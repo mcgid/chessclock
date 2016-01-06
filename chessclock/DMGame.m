@@ -89,9 +89,9 @@
 
 - (void)pushState:(Class)state
 {
-    [self.storedStates addObject:self.stateMachine.currentState];
+    [self.storedStates addObject:[self.stateMachine.currentState class]];
 
-    [self.stateMachine enterState:state];
+    [self enterState:state];
 }
 
 - (void)popState
@@ -100,7 +100,7 @@
 
     [self.storedStates removeLastObject];
 
-    [self.stateMachine enterState:[storedState class]];
+    [self enterState:storedState];
 }
 
 #pragma mark Interface updating
