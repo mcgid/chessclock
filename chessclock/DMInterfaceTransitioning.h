@@ -23,6 +23,17 @@
 // From Settings state
 - (void)interfaceShouldTransitionFromSettingsToNewGame:(id)sender;
 
+// From Paused state
+- (void)interfaceShouldTransitionFromPausedToWhiteTurn:(id)sender;
+- (void)interfaceShouldTransitionFromPausedToBlackTurn:(id)sender;
+- (void)interfaceShouldTransitionFromPausedToConfirmReset:(id)sender;
+
+// From ConfirmReset state
+- (void)interfaceShouldTransitionFromConfirmResetToWhiteLost:(id)sender;
+- (void)interfaceShouldTransitionFromConfirmResetToBlackLost:(id)sender;
+- (void)interfaceShouldTransitionFromConfirmResetToPaused:(id)sender;
+- (void)interfaceShouldTransitionFromConfirmResetToNewGame:(id)sender;
+
 // From WhiteTurn state
 - (void)interfaceShouldTransitionFromWhiteTurnToWhiteLost:(id)sender;
 - (void)interfaceShouldTransitionFromWhiteTurnToPaused:(id)sender;
@@ -33,21 +44,10 @@
 - (void)interfaceShouldTransitionFromBlackTurnToPaused:(id)sender;
 - (void)interfaceShouldTransitionFromBlackTurnToWhiteTurn:(id)sender;
 
-// From Paused state
-- (void)interfaceShouldTransitionFromPausedToWhiteTurn:(id)sender;
-- (void)interfaceShouldTransitionFromPausedToBlackTurn:(id)sender;
-- (void)interfaceShouldTransitionFromPausedToConfirmReset:(id)sender;
-
 // From WhiteLost state
 - (void)interfaceShouldTransitionFromWhiteLostToConfirmReset:(id)sender;
 
-// From WhiteLost state
+// From BlackLost state
 - (void)interfaceShouldTransitionFromBlackLostToConfirmReset:(id)sender;
-
-// From ConfirmReset state
-- (void)interfaceShouldTransitionFromConfirmResetToWhiteLost:(id)sender;
-- (void)interfaceShouldTransitionFromConfirmResetToBlackLost:(id)sender;
-- (void)interfaceShouldTransitionFromConfirmResetToPaused:(id)sender;
-- (void)interfaceShouldTransitionFromConfirmResetToNewGame:(id)sender;
 
 @end

@@ -155,6 +155,78 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 }
 
 
+#pragma mark From Paused state
+// TODO: Deal with the isFirstTurn label situation
+- (void)interfaceShouldTransitionFromPausedToWhiteTurn:(id)sender
+{
+    [self.view deselectPauseButton];
+    [self.view disableResetButton];
+
+    [self animateAnimations:^{
+        [self.view enableWhiteButton];
+    }];
+}
+
+- (void)interfaceShouldTransitionFromPausedToBlackTurn:(id)sender
+{
+    [self.view deselectPauseButton];
+    [self.view disableResetButton];
+
+    [self animateAnimations:^{
+        [self.view enableBlackButton];
+    }];
+}
+
+- (void)interfaceShouldTransitionFromPausedToConfirmReset:(id)sender
+{
+    [self animateAnimations:^{
+        [self.view hideResetButton];
+        [self.view hidePauseButton];
+        [self.view showConfirmResetArea];
+    }];
+}
+
+
+#pragma mark From ConfirmReset state
+
+- (void)interfaceShouldTransitionFromConfirmResetToWhiteLost:(id)sender
+{
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showResetButton];
+    }];
+}
+
+- (void)interfaceShouldTransitionFromConfirmResetToBlackLost:(id)sender
+{
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showResetButton];
+    }];
+}
+
+- (void)interfaceShouldTransitionFromConfirmResetToPaused:(id)sender
+{
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showResetButton];
+        [self.view showPauseButton];
+    }];
+}
+
+- (void)interfaceShouldTransitionFromConfirmResetToNewGame:(id)sender
+{
+    [self animateAnimations:^{
+        [self.view hideConfirmResetArea];
+        [self.view showTimesButton];
+        [self.view resetPlayerButtonColors];
+        [self.view enableWhiteButton];
+        [self.view disableBlackButton];
+        [self.view showStartGameLabel];
+    }];
+}
+
+
 #pragma mark From WhiteTurn state
 
 - (void)interfaceShouldTransitionFromWhiteTurnToWhiteLost:(id)sender
@@ -219,38 +291,6 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 }
 
 
-#pragma mark From Paused state
-// TODO: Deal with the isFirstTurn label situation
-- (void)interfaceShouldTransitionFromPausedToWhiteTurn:(id)sender
-{
-    [self.view deselectPauseButton];
-    [self.view disableResetButton];
-
-    [self animateAnimations:^{
-        [self.view enableWhiteButton];
-    }];
-}
-
-- (void)interfaceShouldTransitionFromPausedToBlackTurn:(id)sender
-{
-    [self.view deselectPauseButton];
-    [self.view disableResetButton];
-
-    [self animateAnimations:^{
-        [self.view enableBlackButton];
-    }];
-}
-
-- (void)interfaceShouldTransitionFromPausedToConfirmReset:(id)sender
-{
-    [self animateAnimations:^{
-        [self.view hideResetButton];
-        [self.view hidePauseButton];
-        [self.view showConfirmResetArea];
-    }];
-}
-
-
 #pragma mark From WhiteLost state
 
 - (void)interfaceShouldTransitionFromWhiteLostToConfirmReset:(id)sender
@@ -262,53 +302,13 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 }
 
 
-#pragma mark From WhiteLost state
+#pragma mark From BlackLost state
 
 - (void)interfaceShouldTransitionFromBlackLostToConfirmReset:(id)sender
 {
     [self animateAnimations:^{
         [self.view hideResetButton];
         [self.view showConfirmResetArea];
-    }];
-}
-
-
-#pragma mark From ConfirmReset state
-
-- (void)interfaceShouldTransitionFromConfirmResetToWhiteLost:(id)sender
-{
-    [self animateAnimations:^{
-        [self.view hideConfirmResetArea];
-        [self.view showResetButton];
-    }];
-}
-
-- (void)interfaceShouldTransitionFromConfirmResetToBlackLost:(id)sender
-{
-    [self animateAnimations:^{
-        [self.view hideConfirmResetArea];
-        [self.view showResetButton];
-    }];
-}
-
-- (void)interfaceShouldTransitionFromConfirmResetToPaused:(id)sender
-{
-    [self animateAnimations:^{
-        [self.view hideConfirmResetArea];
-        [self.view showResetButton];
-        [self.view showPauseButton];
-    }];
-}
-
-- (void)interfaceShouldTransitionFromConfirmResetToNewGame:(id)sender
-{
-    [self animateAnimations:^{
-        [self.view hideConfirmResetArea];
-        [self.view showTimesButton];
-        [self.view resetPlayerButtonColors];
-        [self.view enableWhiteButton];
-        [self.view disableBlackButton];
-        [self.view showStartGameLabel];
     }];
 }
 
