@@ -251,6 +251,10 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)transitionFromWhiteLostToConfirmReset
 {
+    [self animateAnimations:^{
+        [self.view hideResetButton];
+        [self.view showConfirmResetArea];
+    }];
 }
 
 
@@ -258,6 +262,10 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)transitionFromBlackLostToConfirmReset
 {
+    [self animateAnimations:^{
+        [self.view hideResetButton];
+        [self.view showConfirmResetArea];
+    }];
 }
 
 
