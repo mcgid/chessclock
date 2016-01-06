@@ -278,7 +278,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
     [self animateAnimations:^{
         [self.view disableBlackButton];
-        [self.view enableWhiteButton];
+        [self.view enableResetButton];
     }];
 }
 
