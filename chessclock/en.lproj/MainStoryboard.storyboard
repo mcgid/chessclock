@@ -238,7 +238,7 @@
                             <outlet property="whiteBackground" destination="W6x-Mm-Cs0" id="HbG-Hm-RQi"/>
                             <outlet property="whiteButton" destination="YH2-qq-tbN" id="ZjL-PX-iY5"/>
                             <outlet property="whiteSlider" destination="L6B-VO-0dI" id="7oN-gc-DeU"/>
-                            <outlet property="whiteSliderTopConstraint" destination="glf-Du-5NL" id="gMv-wn-pmt"/>
+                            <outlet property="whiteSliderTopConstraint" destination="fz0-M9-5Ea" id="W5Z-Mu-Wpm"/>
                         </connections>
                     </view>
                 </viewController>
