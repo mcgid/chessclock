@@ -49,6 +49,8 @@
 {
     self.gameViewAnimator = [[DMGameViewAnimator alloc] initWithView:(DMGameView *)self.view];
     self.game = [[DMGame alloc] initWithInterface:self.gameViewAnimator];
+
+    [(DMGameView*)self.view setUpSubviews];
 }
 
 #pragma mark -

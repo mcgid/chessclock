@@ -19,6 +19,8 @@
 
 @property (nonatomic, weak) id delegate;
 
+- (void)setUpSubviews;
+
 - (void)updateWithWhiteTime:(DMClockTime)time;
 - (void)updateWithBlackTime:(DMClockTime)time;
 

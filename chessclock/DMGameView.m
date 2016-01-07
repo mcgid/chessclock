@@ -123,6 +123,7 @@
     // Hide the sliders initially
     self.whiteSliderTopConstraint.constant = -1 * self.whiteSlider.intrinsicContentSize.height;
     self.blackSliderBottomConstraint.constant = -1 * self.blackSlider.intrinsicContentSize.height;
+/*
     self.whiteSlider.alpha = 0.0f;
     self.blackSlider.alpha = 0.0f;
 
@@ -154,7 +155,8 @@
         [self layoutIfNeeded];
     }];
 
-
+*/
+    [self setNeedsLayout];
 }
 
 #pragma mark -
