@@ -278,6 +278,7 @@
     self.blackSlider.alpha = 1.0f;
     self.whiteSliderTopConstraint.constant = 20;
     self.blackSliderBottomConstraint.constant = 20;
+    [self layoutIfNeeded];
 }
 
 - (void)hideSliders
@@ -286,6 +287,7 @@
     self.blackSlider.alpha = 0.0f;
     self.whiteSliderTopConstraint.constant = -1 * self.whiteSlider.intrinsicContentSize.height;
     self.blackSliderBottomConstraint.constant = -1 * self.blackSlider.intrinsicContentSize.height;
+    [self layoutIfNeeded];
 }
 
 - (void)enablePlayerButtonInteraction
