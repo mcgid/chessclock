@@ -12,6 +12,10 @@
 
 - (void)willExitWithNextState:(GKState *)nextState
 {
+    // Regardless of where we're going, put the current clock times up
+    [self.game.interface interfaceShouldUpdateWithWhiteTime:[self.game.white remainingTime]];
+    [self.game.interface interfaceShouldUpdateWithBlackTime:[self.game.black remainingTime]];
+
     if ([nextState isKindOfClass:[DMNewGameState class]]) {
         [self.game.interface interfaceShouldTransitionFromLoadingToNewGame:self];
     } else if ([nextState isKindOfClass:[DMSettingsState class]]) {
