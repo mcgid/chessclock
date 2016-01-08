@@ -26,7 +26,7 @@
 
 @implementation DMGame
 
-#pragma mark Initialization
+#pragma mark Lifecycle
 - (instancetype)init
 {
     return [self initWithInterface:nil];
@@ -75,6 +75,14 @@
 
 }
 
+- (void)dealloc
+{
+    // CADisplayLink retains its target, which in this case is self. Hello,
+    // retain cycle. We need to invalidate it so that it releases its target and
+    // the run loop releases the link.
+    [_displayLink invalidate];
+}
+
 #pragma mark State machine
 
 - (Class)state
@@ -107,12 +115,16 @@
 
 - (void)startUpdating
 {
-    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    if (self.displayLink.isPaused == YES) {
+        self.displayLink.paused = NO;
+    } else {
+        [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    }
 }
 
 - (void)stopUpdating
 {
-    [self.displayLink invalidate];
+    self.displayLink.paused = YES;
 }
 
 - (void)update:(CADisplayLink *)sender
