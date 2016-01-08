@@ -38,6 +38,9 @@
                                     </button>
                                     <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="L6B-VO-0dI" userLabel="white slider">
                                         <rect key="frame" x="18" y="20" width="284" height="34"/>
+                                        <connections>
+                                            <action selector="whiteSliderValueChanged:" destination="3" eventType="valueChanged" id="l2x-d1-eSb"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" text="tap here to start the game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmn-Ri-wPl">
                                         <rect key="frame" x="62" y="20" width="197" height="20"/>
@@ -189,6 +192,9 @@
                                     </button>
                                     <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="Fdx-q8-ThR" userLabel="black slider">
                                         <rect key="frame" x="18" y="196" width="284" height="34"/>
+                                        <connections>
+                                            <action selector="blackSliderValueChanged:" destination="3" eventType="valueChanged" id="JjJ-mC-knz"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
