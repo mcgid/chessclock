@@ -148,7 +148,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 {
     [self.view deselectTimesButton];
 
-    [self.view disablePlayerButtonInteraction];
+    [self.view enablePlayerButtonInteraction];
 
     [self animateAnimations:^{
         [self.view showStartGameLabel];
