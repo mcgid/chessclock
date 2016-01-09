@@ -226,7 +226,10 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 
 - (void)interfaceShouldTransitionFromConfirmResetToNewGame:(id)sender
 {
+    [self.view resetStartGameLabelContent];
+
     [self animateAnimations:^{
+        [self.view deselectPauseButton];
         [self.view hideConfirmResetArea];
         [self.view showTimesButton];
         [self.view resetPlayerButtonColors];
