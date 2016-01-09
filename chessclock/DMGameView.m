@@ -440,7 +440,32 @@
 
 #pragma mark IBAction methods
 
+// TODO: Clearly the slider IBAction methods are a kludge right now. They
+// should be moved back to the VC eventually, and not be copypasta, and not make
+// me sad. Eventually, all these things will come to pass. But not yet.
+
+// Also the updateWith_____Time: methods should not be called a billion times
+// while the slider is being moved
+
+// I mean really
+
 - (IBAction)whiteSliderValueChanged:(id)sender {
+    int value = (int)floorf(self.whiteSlider.value);
+
+    NSNumber *time = self.sliderTimes[value - 1];
+
+    DMClockTime clockTime;
+
+    clockTime.milliseconds = 0;
+    clockTime.seconds = 0;
+    clockTime.minutes = time.intValue;
+    clockTime.totalSeconds = time.doubleValue * 60.0;
+
+    [self updateWithWhiteTime:clockTime];
+}
+
+- (IBAction)whiteSliderFinishedEditing:(id)sender
+{
     int value = (int)floorf(self.whiteSlider.value);
 
     NSNumber *time = self.sliderTimes[value - 1];
@@ -469,9 +494,25 @@
     clockTime.minutes = time.intValue;
     clockTime.totalSeconds = time.doubleValue * 60.0;
 
+    [self updateWithBlackTime:clockTime];
+}
+
+- (IBAction)blackSliderFinishedEditing:(id)sender {
+    int value = (int)floorf(self.blackSlider.value);
+
+    NSNumber *time = self.sliderTimes[value - 1];
+
+    DMClockTime clockTime;
+
+    clockTime.milliseconds = 0;
+    clockTime.seconds = 0;
+    clockTime.minutes = time.intValue;
+    clockTime.totalSeconds = time.doubleValue * 60.0;
+
     [self.delegate blackTimeLimitDidChange:clockTime];
 
     [self updateWithBlackTime:clockTime];
 }
+
 
 @end

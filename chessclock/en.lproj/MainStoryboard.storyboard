@@ -39,6 +39,8 @@
                                     <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="L6B-VO-0dI" userLabel="white slider">
                                         <rect key="frame" x="18" y="20" width="284" height="34"/>
                                         <connections>
+                                            <action selector="whiteSliderFinishedEditing:" destination="3" eventType="touchUpInside" id="I8s-QF-pnq"/>
+                                            <action selector="whiteSliderFinishedEditing:" destination="3" eventType="touchUpOutside" id="am5-e4-Uay"/>
                                             <action selector="whiteSliderValueChanged:" destination="3" eventType="valueChanged" id="l2x-d1-eSb"/>
                                         </connections>
                                     </slider>
@@ -193,6 +195,8 @@
                                     <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="Fdx-q8-ThR" userLabel="black slider">
                                         <rect key="frame" x="18" y="196" width="284" height="34"/>
                                         <connections>
+                                            <action selector="blackSliderFinishedEditing:" destination="3" eventType="touchUpInside" id="d9T-zn-ayA"/>
+                                            <action selector="blackSliderFinishedEditing:" destination="3" eventType="touchUpOutside" id="iaA-ir-JJG"/>
                                             <action selector="blackSliderValueChanged:" destination="3" eventType="valueChanged" id="JjJ-mC-knz"/>
                                         </connections>
                                     </slider>
