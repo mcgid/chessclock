@@ -239,7 +239,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
         [self.view enableResetButton];
         [self.view enableWhiteButton];
         [self.view enableBlackButton];
-        [self.view makeWhiteButtonWinner];
+        [self.view makeBlackButtonWinner];
     }];
 }
 
@@ -271,7 +271,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
         [self.view enableResetButton];
         [self.view enableWhiteButton];
         [self.view enableBlackButton];
-        [self.view makeBlackButtonWinner];
+        [self.view makeWhiteButtonWinner];
     }];
 }
 
