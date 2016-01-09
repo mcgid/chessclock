@@ -245,6 +245,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 - (void)interfaceShouldTransitionFromWhiteTurnToWhiteLost:(id)sender
 {
     [self animateAnimations:^{
+        [self.view hideStartGameLabel];
         [self.view hidePauseButton];
         [self.view enableResetButton];
         [self.view enableWhiteButton];
@@ -258,6 +259,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
     [self.view selectPauseButton];
 
     [self animateAnimations:^{
+        [self.view hideStartGameLabel];
         [self.view disableWhiteButton];
         [self.view enableResetButton];
     }];
@@ -266,6 +268,7 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
 - (void)interfaceShouldTransitionFromWhiteTurnToBlackTurn:(id)sender
 {
     [self animateAnimations:^{
+        [self.view hideStartGameLabel];
         [self.view disableWhiteButton];
         [self.view enableBlackButton];
     }];
