@@ -138,6 +138,13 @@ static const NSTimeInterval DMGameViewAnimatorAnimationDuration = 0.25;
         [self.view showPauseButton];
         [self.view showResetButton];
         [self.view enableWhiteButton];
+        [self.view hideStartGameLabel];
+    }];
+
+    [self.view replaceStartGameLabelContent];
+
+    [self animateAnimations:^{
+        [self.view showStartGameLabel];
     }];
 }
 
