@@ -61,12 +61,19 @@
 {
     [self.game enterState:[DMLoadingState class]];
 
-    // Future feature: Saved game
-    // At this point, we can check for a saved game. If we find
-    // one, we can then transition to its saved state from Loading.
-    // That's the reason for these weird consecutive enterState: calls -- the
-    // Loading state exits so that when there is machinery for saving game,
-    // there's a logical interface transition path.
+    // Future feature: Saving game state
+    //
+    // The Loading and NewGame states are separate because, when we are able to
+    // save games, we will want to load directly into the saved state. We don't
+    // want to animate any UI transition from the appearance in NewGame. If we
+    // started in NewGame, we would display the UI in that state, and then have
+    // to transition out of it. With the Loading state, we will easily be able
+    // to transition directly to a different interface state without animation.
+    //
+    // That's the reason for these weird consecutive enterState: calls.
+    // Eventually we'll deal with loading saved state here. It made sense to
+    // design this in now, so that later changes to the overall design will be
+    // relatively easy.
 
     [self.game enterState:[DMNewGameState class]];
 }
