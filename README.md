@@ -2,7 +2,7 @@
 
 This is *chessclock*. You can clone it and build it and install it and run it and use it, but that's not why it's here.
 
-It is here to be an object lesson in building an iOS app with a non-standard interface.
+It is here to be an exploration in building an iOS app with a non-standard interface.
 
 This README explains the design and construction of *chessclock*, starting with why you would want a clock for your chess.
 
@@ -22,17 +22,11 @@ Can we make any tangentially related 1980's science fiction references?
 
 Let's build a chess clock app that targets `iOS 9.0` with `Xcode 7.2`.
 
-Chess is a game. The standard interface metaphors for an iOS app would not be very pretty.
-
-> *Screenshot: Interface with standard metaphors*
-
-Eugh. Gross.
-
-Let's design a custom interface.
+Chess is a game. The standard interface metaphors for an iOS app would not be very pretty, so let's design a custom interface.
 
 > *Screenshot: Design of New Game screen*
 
-Much better. Let's make it fancy with animations, too.
+Let's make it fancy with animations, too. Animations are pretty, but they can also help with usability. Objectively measuring that is super beyond the scope of this README.
 
 ## How
 
