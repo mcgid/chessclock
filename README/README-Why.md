@@ -32,7 +32,8 @@ YOU (OR YOUR FRIENDS) TAKE TOO LONG TO MAKE YOUR (OR THEIR) MOVES.
 
 This is not good.
 
-Games take forever, you (or your friends) hate the implicit rudeness, and no one wants to play with you (or them).
+Games take forever, you (or your friends) hate the implicit rudeness, and no
+one wants to play with you (or them).
 
 It is hard to break the habit of analyzing every possible move, though.
 
@@ -42,7 +43,8 @@ YOU NEED A CHESS CLOCK.
 
 A chess clock gives you a time limit in which to make all of your moves.
 
-At the start of each turn, you press a button to resume your clock's countdown from that limit. If your clock runs out of time, you lose.
+At the start of each turn, you press a button to resume your clock's countdown
+from that limit. If your clock runs out of time, you lose.
 
 ```
 THAT WILL FIX IT.
