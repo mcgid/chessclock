@@ -66,7 +66,7 @@ the game state.
 
 What will our state machine look like?
 
-[I'm glad you asked!](README/README-State-machine.md)
+[I'm glad you asked!](README/README-State_Machine.md)
 
 > *diagram: AppDelegate; GameViewControler view->GameView, game->(Game
 > white->Clock, black->Clock)*
