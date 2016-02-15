@@ -19,6 +19,9 @@
 @property(nonatomic, strong) DMGame *game;
 @property (nonatomic) CADisplayLink *displayLink;
 
+@property (nonatomic) DMClockTime whiteDisplayedTime;
+@property (nonatomic) DMClockTime blackDisplayedTime;
+
 @end
 
 @implementation GameViewController
@@ -160,6 +163,24 @@
 - (void)updateTimes:(CADisplayLink *)sender
 {
 
+    DMClockTime whiteTime = [self.game.white remainingTime];
+    DMClockTime blackTime = [self.game.black remainingTime];
+
+    if (whiteTime.totalSeconds <= 0) {
+        [self.game enterState:[DMWhiteLostState class]];
+    } else if (whiteTime.minutes != self.whiteDisplayedTime.minutes ||
+               whiteTime.seconds != self.whiteDisplayedTime.seconds) {
+        [self.gameViewAnimator interfaceShouldUpdateWithWhiteTime:whiteTime];
+        self.whiteDisplayedTime = whiteTime;
+    }
+
+    if (blackTime.totalSeconds <= 0) {
+        [self.game enterState:[DMBlackLostState class]];
+    } else if (blackTime.minutes != self.blackDisplayedTime.minutes ||
+               blackTime.seconds != self.blackDisplayedTime.seconds) {
+        [self.gameViewAnimator interfaceShouldUpdateWithBlackTime:blackTime];
+        self.blackDisplayedTime = blackTime;
+    }
 }
 
 #pragma mark Interface updating

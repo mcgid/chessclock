@@ -28,8 +28,6 @@
 
 @interface DMTurnState : DMState
 
-@property (nonatomic) DMClockTime displayedTime;
-
 @end
 
 @interface DMWhiteTurnState : DMTurnState

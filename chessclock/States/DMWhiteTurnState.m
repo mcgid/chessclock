@@ -55,17 +55,5 @@
     }
 }
 
-- (void)updateWithDeltaTime:(NSTimeInterval)seconds
-{
-    DMClockTime whiteTime = [self.game.white remainingTime];
-
-    if (whiteTime.totalSeconds <= 0) {
-        [self.game enterState:[DMWhiteLostState class]];
-    } else if (whiteTime.minutes != self.displayedTime.minutes ||
-               whiteTime.seconds != self.displayedTime.seconds) {
-        [self.game.interface interfaceShouldUpdateWithWhiteTime:whiteTime];
-        self.displayedTime = whiteTime;
-    }
-}
 
 @end
