@@ -10,12 +10,11 @@
 @import GameplayKit;
 
 #import "DMGame.h"
+#import "DMTimeUpdating.h"
 
 @interface DMState : GKState
 
 @property (nonatomic, weak) DMGame *game;
-
-// Designated initializer
-- (instancetype)initWithGame:(DMGame *)game;
+@property (nonatomic, weak) id<DMTimeUpdating> timeUpdatingDelegate;
 
 @end

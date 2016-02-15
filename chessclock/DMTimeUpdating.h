@@ -6,7 +6,7 @@
 //
 //
 
-#import "DMState.h"
+@class DMState;
 
 @protocol DMTimeUpdating <NSObject>
 

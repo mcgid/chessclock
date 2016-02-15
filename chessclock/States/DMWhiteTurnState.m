@@ -21,7 +21,7 @@
 
 - (instancetype)initWithGame:(DMGame *)game
 {
-    self = [super initWithGame:game];
+    self = [super init];
 
     if (self) {
         _isFirstTurn = YES;

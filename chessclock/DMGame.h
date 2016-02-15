@@ -7,6 +7,7 @@
 //
 
 #import "DMInterfaceTransitioning.h"
+#import "DMTimeUpdating.h"
 
 @class DMClock, DMState, DMGameView;
 
@@ -17,7 +18,7 @@
 
 @property (nonatomic, weak) id<DMInterfaceTransitioning> interface;
 
-- (instancetype)initWithInterface:(id<DMInterfaceTransitioning>)interface NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithInterface:(id<DMInterfaceTransitioning>)interface timeUpdatingDelegate:(id<DMTimeUpdating>)timeUpdatingDelegate NS_DESIGNATED_INITIALIZER;
 
 - (Class)state;
 - (void)enterState:(Class)state;

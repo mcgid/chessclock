@@ -52,7 +52,7 @@
 - (void)viewDidLoad
 {
     self.gameViewAnimator = [[DMGameViewAnimator alloc] initWithView:(DMGameView *)self.view];
-    self.game = [[DMGame alloc] initWithInterface:self.gameViewAnimator];
+    self.game = [[DMGame alloc] initWithInterface:self.gameViewAnimator timeUpdatingDelegate:self];
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateTimes:)];
     [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 

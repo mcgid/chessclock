@@ -28,16 +28,16 @@
 #pragma mark Lifecycle
 - (instancetype)init
 {
-    return [self initWithInterface:nil];
+    return [self initWithInterface:nil timeUpdatingDelegate:nil];
 }
 
 
-- (instancetype)initWithInterface:(id<DMInterfaceTransitioning>)interface
+- (instancetype)initWithInterface:(id<DMInterfaceTransitioning>)interface timeUpdatingDelegate:(id<DMTimeUpdating>)timeUpdatingDelegate
 {
     self = [super init];
 
     if (self) {
-        _stateMachine = [[GKStateMachine alloc] initWithStates:[self initialStates]];
+        _stateMachine = [[GKStateMachine alloc] initWithStates:[self statesWithGame:self timeUpdatingDelegate:timeUpdatingDelegate]];
         _interface = interface;
         _white = [[DMClock alloc] init];
         _black = [[DMClock alloc] init];
@@ -48,29 +48,25 @@
     return self;
 }
 
-- (NSArray *)initialStates
+- (NSArray *)statesWithGame:(DMGame *)game timeUpdatingDelegate:(id<DMTimeUpdating>)timeUpdatingDelegate
 {
-    DMLoadingState * loadingState = [[DMLoadingState alloc] initWithGame:self];
-    DMNewGameState * newGameState = [[DMNewGameState alloc] initWithGame:self];
-    DMSettingsState * settingsState = [[DMSettingsState alloc] initWithGame:self];
-    DMPausedState * pausedState = [[DMPausedState alloc] initWithGame:self];
-    DMConfirmResetState *confirmResetState = [[DMConfirmResetState alloc] initWithGame:self];
-    DMWhiteTurnState * whiteTurnState = [[DMWhiteTurnState alloc] initWithGame:self];
-    DMWhiteLostState * whiteLostState = [[DMWhiteLostState alloc] initWithGame:self];
-    DMBlackTurnState * blackTurnState = [[DMBlackTurnState alloc] initWithGame:self];
-    DMBlackLostState * blackLostState = [[DMBlackLostState alloc] initWithGame:self];
+    NSArray *states = @[[[DMLoadingState alloc] init],
+                        [[DMNewGameState alloc] init],
+                        [[DMSettingsState alloc] init],
+                        [[DMPausedState alloc] init],
+                        [[DMConfirmResetState alloc] init],
+                        [[DMWhiteTurnState alloc] init],
+                        [[DMWhiteLostState alloc] init],
+                        [[DMBlackTurnState alloc] init],
+                        [[DMBlackLostState alloc] init]
+                        ];
 
-    return @[loadingState,
-             newGameState,
-             settingsState,
-             pausedState,
-             confirmResetState,
-             whiteTurnState,
-             whiteLostState,
-             blackTurnState,
-             blackLostState
-             ];
+    for (DMState *state in states) {
+        state.game = game;
+        state.timeUpdatingDelegate = timeUpdatingDelegate;
+    }
 
+    return states;
 }
 
 
