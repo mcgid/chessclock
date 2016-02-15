@@ -113,6 +113,19 @@
 }
 
 #pragma mark -
+#pragma mark <DMTimeUpdating>
+
+- (void)startUpdatingTime:(DMState *)sender
+{
+    self.displayLink.paused = NO;
+}
+
+- (void)stopUpdatingTime:(DMState *)sender
+{
+    self.displayLink.paused = YES;
+}
+
+#pragma mark -
 #pragma mark IBActions
 
 - (IBAction)toggleTimes:(id)sender {
@@ -182,19 +195,5 @@
         self.blackDisplayedTime = blackTime;
     }
 }
-
-#pragma mark Interface updating
-
-- (void)startUpdating
-{
-    self.displayLink.paused = NO;
-}
-
-- (void)stopUpdating
-{
-    self.displayLink.paused = YES;
-}
-
-
 
 @end

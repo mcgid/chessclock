@@ -79,6 +79,7 @@
 		37AF871D16498D74006E245D /* DMGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DMGame.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		37AF871E16498D74006E245D /* DMGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DMGame.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		37C3E1BA179F2C0B00C557BC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		37CCBC711C7268840038D5F3 /* DMTimeUpdating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTimeUpdating.h; sourceTree = "<group>"; };
 		37FFF8A51C27B6BE009CF3D6 /* DMStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMStates.h; path = States/DMStates.h; sourceTree = "<group>"; };
 		37FFF8A71C27B855009CF3D6 /* DMLoadingState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLoadingState.m; path = States/DMLoadingState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +144,7 @@
 				374635061C24940000880DBF /* DMGameView.h */,
 				374635071C24940000880DBF /* DMGameView.m */,
 				37035AD81C3C75F9007DD65D /* DMInterfaceTransitioning.h */,
+				37CCBC711C7268840038D5F3 /* DMTimeUpdating.h */,
 				37035AD91C3C7828007DD65D /* DMGameViewAnimator.h */,
 				37035ADA1C3C7828007DD65D /* DMGameViewAnimator.m */,
 				37AF871D16498D74006E245D /* DMGame.h */,

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "DMGameView.h"
+#import "DMTimeUpdating.h"
 
-@interface GameViewController : UIViewController <DMGameViewDelegate>
+@interface GameViewController : UIViewController <DMGameViewDelegate, DMTimeUpdating>
 
 @end
