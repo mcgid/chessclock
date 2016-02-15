@@ -19,9 +19,6 @@
 
 - (instancetype)initWithInterface:(id<DMInterfaceTransitioning>)interface NS_DESIGNATED_INITIALIZER;
 
-- (void)startUpdating;
-- (void)stopUpdating;
-
 - (Class)state;
 - (void)enterState:(Class)state;
 - (void)pushState:(Class)state;

@@ -17,7 +17,6 @@
 @interface DMGame ()
 
 @property (nonatomic) GKStateMachine *stateMachine;
-@property (nonatomic) CADisplayLink *displayLink;
 @property (nonatomic) CFTimeInterval lastUpdateTimestamp;
 @property (nonatomic) NSMutableArray *storedStates;
 
@@ -42,7 +41,6 @@
         _interface = interface;
         _white = [[DMClock alloc] init];
         _black = [[DMClock alloc] init];
-        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
         _lastUpdateTimestamp = 0.0;
         _storedStates = [[NSMutableArray alloc] initWithCapacity:5];
     }
@@ -75,13 +73,6 @@
 
 }
 
-- (void)dealloc
-{
-    // CADisplayLink retains its target, which in this case is self. Hello,
-    // retain cycle. We need to invalidate it so that it releases its target and
-    // the run loop releases the link.
-    [_displayLink invalidate];
-}
 
 #pragma mark State machine
 
@@ -109,31 +100,6 @@
     [self.storedStates removeLastObject];
 
     [self enterState:storedState];
-}
-
-#pragma mark Interface updating
-
-- (void)startUpdating
-{
-    if (self.displayLink.isPaused == YES) {
-        self.displayLink.paused = NO;
-    } else {
-        [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-    }
-}
-
-- (void)stopUpdating
-{
-    self.displayLink.paused = YES;
-}
-
-- (void)update:(CADisplayLink *)sender
-{
-    NSTimeInterval deltaTime = (NSTimeInterval)(self.displayLink.timestamp - self.lastUpdateTimestamp);
-
-    [self.stateMachine updateWithDeltaTime:deltaTime];
-
-    self.lastUpdateTimestamp = self.displayLink.timestamp;
 }
 
 #pragma mark Time limit changing

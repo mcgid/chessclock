@@ -17,12 +17,13 @@
 
 @property (nonatomic) DMGameViewAnimator *gameViewAnimator;
 @property(nonatomic, strong) DMGame *game;
+@property (nonatomic) CADisplayLink *displayLink;
 
 @end
 
 @implementation GameViewController
 
-#pragma mark Initialization
+#pragma mark Class Lifecycle
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -49,9 +50,19 @@
 {
     self.gameViewAnimator = [[DMGameViewAnimator alloc] initWithView:(DMGameView *)self.view];
     self.game = [[DMGame alloc] initWithInterface:self.gameViewAnimator];
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateTimes:)];
+    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 
     ((DMGameView *)self.view).delegate = self;
     [(DMGameView*)self.view setUpSubviews];
+}
+
+- (void)dealloc
+{
+    // CADisplayLink retains its target, which in this case is self. Hello,
+    // retain cycle. We need to invalidate it so that it releases its target and
+    // the run loop releases the link.
+    [_displayLink invalidate];
 }
 
 #pragma mark -
@@ -145,5 +156,24 @@
         [self.game enterState:[DMWhiteTurnState class]];
     }
 }
+
+- (void)updateTimes:(CADisplayLink *)sender
+{
+
+}
+
+#pragma mark Interface updating
+
+- (void)startUpdating
+{
+    self.displayLink.paused = NO;
+}
+
+- (void)stopUpdating
+{
+    self.displayLink.paused = YES;
+}
+
+
 
 @end
