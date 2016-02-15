@@ -18,12 +18,12 @@
     // Prevent screen from dimming
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 
-    [self.game startUpdating];
+    [self.timeUpdatingDelegate startUpdatingTime:self];
 }
 
 - (void)willExitWithNextState:(GKState *)nextState
 {
-    [self.game stopUpdating];
+    [self.timeUpdatingDelegate stopUpdatingTime:self];
 
     if (![nextState isKindOfClass:[DMTurnState class]]) {
         // Allow the screen to dim
