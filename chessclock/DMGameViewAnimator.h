@@ -58,8 +58,4 @@
 // From BlackLost state
 - (void)interfaceShouldTransitionFromBlackLostToConfirmReset:(id)sender;
 
-// Updating clock times
-- (void)interfaceShouldUpdateWithWhiteTime:(DMClockTime)remainingTime;
-- (void)interfaceShouldUpdateWithBlackTime:(DMClockTime)remainingTime;
-
 @end

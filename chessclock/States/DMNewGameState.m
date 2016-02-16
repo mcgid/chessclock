@@ -18,8 +18,7 @@
     [self.game.white reset];
     [self.game.black reset];
 
-    [self.game.interface interfaceShouldUpdateWithWhiteTime:[self.game.white remainingTime]];
-    [self.game.interface interfaceShouldUpdateWithBlackTime:[self.game.black remainingTime]];
+    [self.timeUpdatingDelegate timeDidChange:self];
 }
 
 - (void)willExitWithNextState:(GKState *)nextState

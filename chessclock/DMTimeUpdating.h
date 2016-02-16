@@ -13,4 +13,6 @@
 - (void)startUpdatingTime:(DMState *)sender;
 - (void)stopUpdatingTime:(DMState *)sender;
 
+- (void)timeDidChange:(DMState *)sender;
+
 @end

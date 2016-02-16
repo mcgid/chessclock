@@ -125,6 +125,17 @@
     self.displayLink.paused = YES;
 }
 
+- (void)timeDidChange:(DMState *)sender
+{
+    // Clearly, casting self.view is hideous.
+    // It's merely indicative of the bigger problem: I need to pull everything from
+    // DMGameView back into a category on GameViewController.
+    //
+    // I wanted to decouple them so very much.
+    [(DMGameView *)self.view updateWithWhiteTime:[self.game.white remainingTime]];
+    [(DMGameView *)self.view updateWithBlackTime:[self.game.black remainingTime]];
+}
+
 #pragma mark -
 #pragma mark IBActions
 
@@ -183,7 +194,7 @@
         [self.game enterState:[DMWhiteLostState class]];
     } else if (whiteTime.minutes != self.whiteDisplayedTime.minutes ||
                whiteTime.seconds != self.whiteDisplayedTime.seconds) {
-        [self.gameViewAnimator interfaceShouldUpdateWithWhiteTime:whiteTime];
+        [(DMGameView *)self.view updateWithWhiteTime:whiteTime];
         self.whiteDisplayedTime = whiteTime;
     }
 
@@ -191,7 +202,7 @@
         [self.game enterState:[DMBlackLostState class]];
     } else if (blackTime.minutes != self.blackDisplayedTime.minutes ||
                blackTime.seconds != self.blackDisplayedTime.seconds) {
-        [self.gameViewAnimator interfaceShouldUpdateWithBlackTime:blackTime];
+        [(DMGameView *)self.view updateWithBlackTime:blackTime];
         self.blackDisplayedTime = blackTime;
     }
 }
