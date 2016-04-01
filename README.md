@@ -1,73 +1,76 @@
-# chessclock
+# chessclock: A game timer for iOS
 
-This is *chessclock*. You can clone it and build it and install it and run it
-and use it, but that's not why it's here.
+chessclock is [a game timer](https://en.wikipedia.org/wiki/Chess_clock) for
+iOS. You can use a game timer for two-player games like **chess** or **go**, to
+ensure you and your opponent get a fair amount of time in which to take your
+turns. Hit your button to end your turn; when a player's clock reaches 0, they
+lose.
 
-It is here to be an exploration in building an iOS app with a non-standard
-interface.
-
-This README explains the design and construction of *chessclock*, starting with
-why you would want a clock for your chess.
-
-## Why
-
-What's a chess clock?
-
-Why would you use one?
-
-Why would you make one?
-
-Can we make any tangentially related 1980's science fiction references?
-
-[Read the answers here…](README/README-Why.md)
-
-## What
-
-Let's build a chess clock app that targets `iOS 9.0` with `Xcode 7.2`.
-
-Chess is a game. The standard interface metaphors for an iOS app would not be
-very pretty, so let's design a custom interface.
-
-> *Screenshot: Design of New Game screen*
-
-Let's make it fancy with animations, too. Animations are pretty, but they can
-also help with usability. Objectively measuring that is super beyond the scope
-of this README.
-
-## How
-
-#### Class Structure
-
-We need classes to make our app.
-
-[What classes will we need?](README/README-Class_Structure.md)
-
-I prepared this baking sheet of classes beforehand:
-
-> *diagram: AppDelegate; GameViewControler view->GameView, game->(Game
-> white->Clock, black->Clock)*
+![Screenshots of chessclock](README/screenshots.png?raw=true)
 
 
-#### Fanciness Begets Complexity
+## Developing
 
-We're going to make the interface fancy. The fancier an interface is, the
-harder it is to keep track of which controls should be visible, which should be
-enabled, and what should be updated.
+chessclock is written in Objective-C, and linked against iOS 9.2. It has no
+dependencies beyond the iOS system libraries. It is pretty straightforward.
 
-A useful tool to deal with fancy interfaces is a [state
-machine](https://en.wikipedia.org/wiki/Finite-state_machine).
 
-#### State Machine
+## Wait, Why Is This Thing On Github
 
-iOS 9.0 gave us `GameplayKit`, which gives us `GKStateMachine` and `GKState`.
-Let's use them to keep track of what our interface is doing. The
-`GKStateMachine` object can live in our `Game` class, since the latter holds
-the game state.
+Exploration.
 
-What will our state machine look like?
+The first version worked great, with a clean design and touches of animation,
+but was horrible underneath: all the view animation logic and (half-baked)
+state tracking in one Massive View Controller. It hurt.
 
-[I'm glad you asked!](README/README-State_Machine.md)
+So I made a proper state machine for the UI (using [GKStateMachine][1]),
+abstracted the state transitions to a protoocol, and separated many concerns.
 
-> *diagram: AppDelegate; GameViewControler view->GameView, game->(Game
-> white->Clock, black->Clock)*
+I haven't seen anyone discussing user interface state machines in iOS, so
+making my implementation public is the first step to making that discussion
+exist on the Internet. Hopefully it will be useful.
+
+
+## So How Is It Structured
+
+Here is a hand-wavey diagram of the current classes, made while figuring out a
+better flow of method calls for updating the times:
+
+![Class diagram](README/fig2-class_diagram.png)
+
+* Solid black boxes are classes (Note: not all class names are correct, for
+  some reason `:/`)
+* Dotted/dashed boxes are, vaguley, "collections" -- there are two `DMClock`s and
+  several `DMState`s)
+* Grey text boxes on arrows are property/method names
+* Solid black arrows are `strong` properties
+* Dashed arrows are `weak` properties
+* Orange text and arrows are the flow of method calls for updating the time
+
+## And What Is The State Machine You Keep Mentioning
+
+This diagram shows the user interface states:
+
+![State machine diagram](README/fig3-state_machine.png)
+
+* Boxes are states
+* Solid arrows are regular state transitions, initiated by user input or
+  logical conditions (i.e. timer running out)
+* Text on transitions arrows is a description of the user input or conditions
+  which will cause the transition to occur
+* Dashed arrows are direct transitions from initial app loading state, to
+  support restoring the complete app state (particularly UI) if the app gets
+  killed (**NOTE: this feature isn't implemented yet**)
+
+
+## So Now What
+
+There's clearly more to say about this approach, and the issues of
+encapsulation and where responsibilities lie. I hope to actually write that;
+for now, this at least documents the thing itself.
+
+If you have questions, bug reports, pull requests, or anything else, please let
+me know in an Issue or a Pull Request!
+
+[1]: https://developer.apple.com/library/mac/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html
 
