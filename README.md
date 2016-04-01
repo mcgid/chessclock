@@ -6,7 +6,7 @@ ensure you and your opponent get a fair amount of time in which to take your
 turns. Hit your button to end your turn; when a player's clock reaches 0, they
 lose.
 
-![Screenshots of chessclock](README/screenshots.png?raw=true)
+![Screenshots of chessclock](README/fig1-screenshots.png?raw=true)
 
 
 ## Developing
@@ -36,7 +36,7 @@ exist on the Internet. Hopefully it will be useful.
 Here is a hand-wavey diagram of the current classes, made while figuring out a
 better flow of method calls for updating the times:
 
-![Class diagram](README/fig2-class_diagram.png)
+![Class diagram](README/fig2-class_diagram.png?raw=true)
 
 * Solid black boxes are classes (Note: not all class names are correct, for
   some reason `:/`)
@@ -51,7 +51,7 @@ better flow of method calls for updating the times:
 
 This diagram shows the user interface states:
 
-![State machine diagram](README/fig3-state_machine.png)
+![State machine diagram](README/fig3-state_machine.png?raw=true)
 
 * Boxes are states
 * Solid arrows are regular state transitions, initiated by user input or
